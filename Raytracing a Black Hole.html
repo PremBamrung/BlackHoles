@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://rantonels.github.io/starless/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="./Raytracing a Black Hole_files/bootstrap.min.css">
+
+		<link rel="stylesheet" href="./Raytracing a Black Hole_files/starter-template.css">
+		<title>Raytracing a Black Hole</title>
+
+		<script src="./Raytracing a Black Hole_files/jquery.min.js.téléchargement"></script>
+		<script src="./Raytracing a Black Hole_files/bootstrap.min.js.téléchargement"></script>
+
+<script src="./Raytracing a Black Hole_files/MathJax.js.téléchargement" id="">
+</script>
+		<link rel="stylesheet" href="./Raytracing a Black Hole_files/font-awesome.min.css">	
+
+		<link rel="stylesheet" href="./Raytracing a Black Hole_files/bootstrap-social.css">	
+
+		<style>
+			html, body {
+			    max-width: 100%;
+			    overflow-x: hidden;
+			}
+			.img-mrg {
+				margin-top:20px;
+				margin-bottom:20px;
+			}
+		</style>
+
+	<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.1') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+#wanteeed html, #wanteeed body, #wanteeed div, #wanteeed span, #wanteeed applet, #wanteeed object, #wanteeed iframe,
+#wanteeed h1, #wanteeed h2, #wanteeed h3, #wanteeed h4, #wanteeed h5, #wanteeed h6, #wanteeed p, #wanteeed blockquote, #wanteeed pre,
+#wanteeed a, #wanteeed abbr, #wanteeed acronym, #wanteeed address, #wanteeed big, #wanteeed cite, #wanteeed code,
+#wanteeed del, #wanteeed dfn, #wanteeed em, #wanteeed img, #wanteeed ins, #wanteeed kbd, #wanteeed q, #wanteeed s, #wanteeed samp,
+#wanteeed small, #wanteeed strike, #wanteeed strong, #wanteeed sub, #wanteeed sup, #wanteeed tt, #wanteeed var,
+#wanteeed b, #wanteeed u, #wanteeed i, #wanteeed center,
+#wanteeed dl, #wanteeed dt, #wanteeed dd, #wanteeed ol, #wanteeed ul, #wanteeed li,
+#wanteeed fieldset, #wanteeed form, #wanteeed label, #wanteeed legend,
+#wanteeed table, #wanteeed caption, #wanteeed tbody, #wanteeed tfoot, #wanteeed thead, #wanteeed tr, #wanteeed th, #wanteeed td,
+#wanteeed article, #wanteeed aside, #wanteeed canvas, #wanteeed details, #wanteeed embed, 
+#wanteeed figure, #wanteeed figcaption, #wanteeed footer, #wanteeed header, #wanteeed hgroup, 
+#wanteeed menu, #wanteeed nav, #wanteeed output, #wanteeed ruby, #wanteeed section, #wanteeed summary,
+#wanteeed time, #wanteeed mark, #wanteeed audio, #wanteeed video, #wanteeed button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/*font-size: 100%;
+	font: inherit;*/
+	font:13px "Verdana", sans-serif;
+	text-align:left;
+	vertical-align: baseline;
+	-webkit-box-shadow: none;
+	-webkit-box-sizing:initial;
+	box-sizing:initial;
+	box-shadow: none;
+	color:#555555;
+	text-transform:none;
+}
+/* HTML5 display-role reset for older browsers */
+#wanteeed article, #wanteeed aside, #wanteeed details, #wanteeed figcaption, #wanteeed figure, 
+#wanteeed footer, #wanteeed header, #wanteeed hgroup, #wanteeed menu, #wanteeed nav, #wanteeed section {
+	display: block;
+}
+#wanteeed body {
+	line-height: 1;
+}
+#wanteeed ol, #wanteeed ul {
+	list-style: none;
+}
+#wanteeed blockquote, #wanteeed q {
+	quotes: none;
+}
+#wanteeed blockquote:before, #wanteeed blockquote:after,
+#wanteeed q:before, #wanteeed q:after {
+	content: '';
+	content: none;
+}
+#wanteeed table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*report*/
+
+#wanteeed-report html, #wanteeed-report body, #wanteeed-report div, #wanteeed-report span, #wanteeed-report applet, #wanteeed-report object, #wanteeed-report iframe,
+#wanteeed-report h1, #wanteeed-report h2, #wanteeed-report h3, #wanteeed-report h4, #wanteeed-report h5, #wanteeed-report h6, #wanteeed-report p, #wanteeed-report blockquote, #wanteeed-report pre,
+#wanteeed-report a, #wanteeed-report abbr, #wanteeed-report acronym, #wanteeed-report address, #wanteeed-report big, #wanteeed-report cite, #wanteeed-report code,
+#wanteeed-report del, #wanteeed-report dfn, #wanteeed-report em, #wanteeed-report img, #wanteeed-report ins, #wanteeed-report kbd, #wanteeed-report q, #wanteeed-report s, #wanteeed-report samp,
+#wanteeed-report small, #wanteeed-report strike, #wanteeed-report strong, #wanteeed-report sub, #wanteeed-report sup, #wanteeed-report tt, #wanteeed-report var,
+#wanteeed-report b, #wanteeed-report u, #wanteeed-report i, #wanteeed-report center,
+#wanteeed-report dl, #wanteeed-report dt, #wanteeed-report dd, #wanteeed-report ol, #wanteeed-report ul, #wanteeed-report li,
+#wanteeed-report fieldset, #wanteeed-report form, #wanteeed-report label, #wanteeed-report legend,
+#wanteeed-report table, #wanteeed-report caption, #wanteeed-report tbody, #wanteeed-report tfoot, #wanteeed-report thead, #wanteeed-report tr, #wanteeed-report th, #wanteeed-report td,
+#wanteeed-report article, #wanteeed-report aside, #wanteeed-report canvas, #wanteeed-report details, #wanteeed-report embed, 
+#wanteeed-report figure, #wanteeed-report figcaption, #wanteeed-report footer, #wanteeed-report header, #wanteeed-report hgroup, 
+#wanteeed-report menu, #wanteeed-report nav, #wanteeed-report output, #wanteeed-report ruby, #wanteeed-report section, #wanteeed-report summary,
+#wanteeed-report time, #wanteeed-report mark, #wanteeed-report audio, #wanteeed-report video, #wanteeed-report button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/*font-size: 100%;*/
+	text-align:left;
+	font:13px "Verdana", sans-serif;
+	vertical-align: baseline;
+	-webkit-box-shadow: none;
+	-webkit-box-sizing:initial;
+	box-sizing:initial;
+	box-shadow: none;
+	color:#555555;
+	text-transform:none;
+}
+/* HTML5 display-role reset for older browsers */
+#wanteeed-report article, #wanteeed-report aside, #wanteeed-report details, #wanteeed-report figcaption, #wanteeed-report figure, 
+#wanteeed-report footer, #wanteeed-report header, #wanteeed-report hgroup, #wanteeed-report menu, #wanteeed-report nav, #wanteeed-report section {
+	display: block;
+}
+#wanteeed-report body {
+	line-height: 1;
+}
+#wanteeed-report ol, #wanteeed-report ul {
+	list-style: none;
+}
+#wanteeed-report blockquote, #wanteeed-report q {
+	quotes: none;
+}
+#wanteeed-report blockquote:before, #wanteeed-report blockquote:after,
+#wanteeed-report q:before, #wanteeed-report q:after {
+	content: '';
+	content: none;
+}
+
+/*main item **/
+
+
+.wanteeed-main-item html, .wanteeed-main-item body, .wanteeed-main-item div, .wanteeed-main-item span, .wanteeed-main-item applet, .wanteeed-main-item object, .wanteeed-main-item iframe,
+.wanteeed-main-item h1, .wanteeed-main-item h2, .wanteeed-main-item h3, .wanteeed-main-item h4, .wanteeed-main-item h5, .wanteeed-main-item h6, .wanteeed-main-item p, .wanteeed-main-item blockquote, .wanteeed-main-item pre,
+.wanteeed-main-item a, .wanteeed-main-item abbr, .wanteeed-main-item acronym, .wanteeed-main-item address, .wanteeed-main-item big, .wanteeed-main-item cite, .wanteeed-main-item code,
+.wanteeed-main-item del, .wanteeed-main-item dfn, .wanteeed-main-item em, .wanteeed-main-item img, .wanteeed-main-item ins, .wanteeed-main-item kbd, .wanteeed-main-item q, .wanteeed-main-item s, .wanteeed-main-item samp,
+.wanteeed-main-item small, .wanteeed-main-item strike, .wanteeed-main-item strong, .wanteeed-main-item sub, .wanteeed-main-item sup, .wanteeed-main-item tt, .wanteeed-main-item var,
+.wanteeed-main-item b, .wanteeed-main-item u, .wanteeed-main-item i, .wanteeed-main-item center,
+.wanteeed-main-item dl, .wanteeed-main-item dt, .wanteeed-main-item dd, .wanteeed-main-item ol, .wanteeed-main-item ul, .wanteeed-main-item li,
+.wanteeed-main-item fieldset, .wanteeed-main-item form, .wanteeed-main-item label, .wanteeed-main-item legend,
+.wanteeed-main-item table, .wanteeed-main-item caption, .wanteeed-main-item tbody, .wanteeed-main-item tfoot, .wanteeed-main-item thead, .wanteeed-main-item tr, .wanteeed-main-item th, .wanteeed-main-item td,
+.wanteeed-main-item article, .wanteeed-main-item aside, .wanteeed-main-item canvas, .wanteeed-main-item details, .wanteeed-main-item embed, 
+.wanteeed-main-item figure, .wanteeed-main-item figcaption, .wanteeed-main-item footer, .wanteeed-main-item header, .wanteeed-main-item hgroup, 
+.wanteeed-main-item menu, .wanteeed-main-item nav, .wanteeed-main-item output, .wanteeed-main-item ruby, .wanteeed-main-item section, .wanteeed-main-item summary,
+.wanteeed-main-item time, .wanteeed-main-item mark, .wanteeed-main-item audio, .wanteeed-main-item video, .wanteeed-main-item button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/*font-size: 100%;*/
+	text-align:left;
+	font:13px "Verdana", sans-serif;
+	vertical-align: baseline;
+	-webkit-box-shadow: none;
+	-webkit-box-sizing:initial;
+	box-sizing:initial;
+	box-shadow: none;
+	color:#555555;
+	text-transform:none;
+}
+/* HTML5 display-role reset for older browsers */
+.wanteeed-main-item article, .wanteeed-main-item aside, .wanteeed-main-item details, .wanteeed-main-item figcaption, .wanteeed-main-item figure, 
+.wanteeed-main-item footer, .wanteeed-main-item header, .wanteeed-main-item hgroup, .wanteeed-main-item menu, .wanteeed-main-item nav, .wanteeed-main-item section {
+	display: block;
+}
+.wanteeed-main-item body {
+	line-height: 1;
+}
+.wanteeed-main-item ol, .wanteeed-main-item ul {
+	list-style: none;
+}
+.wanteeed-main-item blockquote, .wanteeed-main-item q {
+	quotes: none;
+}
+.wanteeed-main-item blockquote:before, .wanteeed-main-item blockquote:after,
+.wanteeed-main-item q:before, .wanteeed-main-item q:after {
+	content: '';
+	content: none;
+}
+
+
+
+
+#wanteeed-report table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#wanteeed-progress-bar div  {
+    background-size: 30px 30px;
+	color:white;
+	background-color:rgb(209, 43, 53);
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                        transparent 75%, transparent);            
+    
+    -webkit-animation: animate-stripes 3s linear infinite;             
+}
+
+
+@-webkit-keyframes animate-stripes
+{
+    from {
+        background-position: 0 0;
+    }
+    to {
+       background-position: 60px 0;
+    }
+}</style><style type="text/css">/* ========================================================================
+ * bootstrap-tour - v0.10.1
+ * http://bootstraptour.com
+ * ========================================================================
+ * Copyright 2012-2013 Ulrich Sossou
+ *
+ * ========================================================================
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ========================================================================
+ */
+
+/*!
+ * Bootstrap v3.1.0 (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+
+
+.popover-wanteeed html, .popover-wanteeed body, .popover-wanteeed div, .popover-wanteeed span, .popover-wanteeed applet, .popover-wanteeed object, .popover-wanteeed iframe,
+.popover-wanteeed h1, .popover-wanteeed h2, .popover-wanteeed h3, .popover-wanteeed h4, .popover-wanteeed h5, .popover-wanteeed h6, .popover-wanteeed p, .popover-wanteeed blockquote, .popover-wanteeed pre,
+.popover-wanteeed a, .popover-wanteeed abbr, .popover-wanteeed acronym, .popover-wanteeed address, .popover-wanteeed big, .popover-wanteeed cite, .popover-wanteeed code,
+.popover-wanteeed del, .popover-wanteeed dfn, .popover-wanteeed em, .popover-wanteeed img, .popover-wanteeed ins, .popover-wanteeed kbd, .popover-wanteeed q, .popover-wanteeed s, .popover-wanteeed samp,
+.popover-wanteeed small, .popover-wanteeed strike, .popover-wanteeed strong, .popover-wanteeed sub, .popover-wanteeed sup, .popover-wanteeed tt, .popover-wanteeed var,
+.popover-wanteeed b, .popover-wanteeed u, .popover-wanteeed i, .popover-wanteeed center,
+.popover-wanteeed dl, .popover-wanteeed dt, .popover-wanteeed dd, .popover-wanteeed ol, .popover-wanteeed ul, .popover-wanteeed li,
+.popover-wanteeed fieldset, .popover-wanteeed form, .popover-wanteeed label, .popover-wanteeed legend,
+.popover-wanteeed table, .popover-wanteeed caption, .popover-wanteeed tbody, .popover-wanteeed tfoot, .popover-wanteeed thead, .popover-wanteeed tr, .popover-wanteeed th, .popover-wanteeed td,
+.popover-wanteeed article, .popover-wanteeed aside, .popover-wanteeed canvas, .popover-wanteeed details, .popover-wanteeed embed,
+.popover-wanteeed figure, .popover-wanteeed figcaption, .popover-wanteeed footer, .popover-wanteeed header, .popover-wanteeed hgroup,
+.popover-wanteeed menu, .popover-wanteeed nav, .popover-wanteeed output, .popover-wanteeed ruby, .popover-wanteeed section, .popover-wanteeed summary,
+.popover-wanteeed time, .popover-wanteeed mark, .popover-wanteeed audio, .popover-wanteeed video, .popover-wanteeed button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/*font-size: 100%;
+	font: inherit;*/
+	font:13px "Verdana", sans-serif;
+	text-align:left;
+	vertical-align: baseline;
+	-webkit-box-shadow: none;
+	-webkit-box-sizing:initial;
+	box-sizing:initial;
+	box-shadow: none;
+	color:#555555;
+	text-transform:none;
+	background:none;
+	bottom:inherit ;
+}
+/* HTML5 display-role reset for older browsers *//*
+.popover-wanteeed article, .popover-wanteeed aside, .popover-wanteeed details, .popover-wanteeed figcaption, .popover-wanteeed figure,
+.popover-wanteeed footer, .popover-wanteeed header, .popover-wanteeed hgroup, .popover-wanteeed menu, .popover-wanteeed nav, .popover-wanteeed section {
+	display: block;
+}
+.popover-wanteeed body {
+	line-height: 1;
+}
+.popover-wanteeed ol, .popover-wanteeed ul {
+	list-style: none;
+}
+.popover-wanteeed blockquote, .popover-wanteeed q {
+	quotes: none;
+}
+.popover-wanteeed blockquote:before, .popover-wanteeed blockquote:after,
+.popover-wanteeed q:before, .popover-wanteeed q:after {
+	content: '';
+	content: none;
+}
+.popover-wanteeed table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}*/
+
+
+
+.popover-wanteeed .btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.popover-wanteeed .btn:focus,
+.popover-wanteeed .btn:active:focus,
+.popover-wanteeed .btn.active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.popover-wanteeed .btn:hover,
+.popover-wanteeed .btn:focus {
+  color: #333333;
+  text-decoration: none;
+}
+.popover-wanteeed .btn:active,
+.popover-wanteeed .btn.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.popover-wanteeed .btn.disabled,
+.popover-wanteeed .btn[disabled],
+fieldset[disabled] .btn {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.popover-wanteeed .btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+.popover-wanteeed .btn-default:hover,
+.popover-wanteeed .btn-default:focus,
+.popover-wanteeed .btn-default:active,
+.popover-wanteeed .btn-default.active,
+.popover-wanteeed .open > .dropdown-toggle.btn-default {
+  color: #333333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.popover-wanteeed .btn-default:active,
+.popover-wanteeed .btn-default.active,
+.popover-wanteeed .open > .dropdown-toggle.btn-default {
+  background-image: none;
+}
+.popover-wanteeed .btn-default.disabled,
+.popover-wanteeed .btn-default[disabled],
+.popover-wanteeed fieldset[disabled] .btn-default,
+.popover-wanteeed .btn-default.disabled:hover,
+.popover-wanteeed .btn-default[disabled]:hover,
+.popover-wanteeed fieldset[disabled] .btn-default:hover,
+.popover-wanteeed .btn-default.disabled:focus,
+.popover-wanteeed .btn-default[disabled]:focus,
+.popover-wanteeed fieldset[disabled] .btn-default:focus,
+.popover-wanteeed .btn-default.disabled:active,
+.popover-wanteeed .btn-default[disabled]:active,
+.popover-wanteeed fieldset[disabled] .btn-default:active,
+.popover-wanteeed .btn-default.disabled.active,
+.popover-wanteeed .btn-default[disabled].active,
+.popover-wanteeed fieldset[disabled] .btn-default.active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+.popover-wanteeed .btn-default .badge {
+  color: #ffffff;
+  background-color: #333333;
+}
+.popover-wanteeed .btn-primary {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.popover-wanteeed .btn-primary:hover,
+.popover-wanteeed .btn-primary:focus,
+.popover-wanteeed .btn-primary:active,
+.popover-wanteeed .btn-primary.active,
+.popover-wanteeed .open > .dropdown-toggle.btn-primary {
+  color: #ffffff;
+  background-color: #3071a9;
+  border-color: #285e8e;
+}
+.popover-wanteeed .btn-primary:active,
+.popover-wanteeed .btn-primary.active,
+.popover-wanteeed .open > .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+.popover-wanteeed .btn-primary.disabled,
+.popover-wanteeed .btn-primary[disabled],
+.popover-wanteeed fieldset[disabled] .btn-primary,
+.popover-wanteeed .btn-primary.disabled:hover,
+.popover-wanteeed .btn-primary[disabled]:hover,
+.popover-wanteeed fieldset[disabled] .btn-primary:hover,
+.popover-wanteeed .btn-primary.disabled:focus,
+.popover-wanteeed .btn-primary[disabled]:focus,
+.popover-wanteeed fieldset[disabled] .btn-primary:focus,
+.popover-wanteeed .btn-primary.disabled:active,
+.popover-wanteeed .btn-primary[disabled]:active,
+.popover-wanteeed fieldset[disabled] .btn-primary:active,
+.popover-wanteeed .btn-primary.disabled.active,
+.popover-wanteeed .btn-primary[disabled].active,
+.popover-wanteeed fieldset[disabled] .btn-primary.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.popover-wanteeed .btn-primary .badge {
+  color: #428bca;
+  background-color: #ffffff;
+}
+.popover-wanteeed .btn-success {
+  color: #ffffff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.popover-wanteeed .btn-success:hover,
+.popover-wanteeed .btn-success:focus,
+.popover-wanteeed .btn-success:active,
+.popover-wanteeed .btn-success.active,
+.popover-wanteeed .open > .dropdown-toggle.btn-success {
+  color: #ffffff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.popover-wanteeed .btn-success:active,
+.popover-wanteeed .btn-success.active,
+.popover-wanteeed .open > .dropdown-toggle.btn-success {
+  background-image: none;
+}
+.popover-wanteeed .btn-success.disabled,
+.popover-wanteeed .btn-success[disabled],
+.popover-wanteeed fieldset[disabled] .btn-success,
+.popover-wanteeed .btn-success.disabled:hover,
+.popover-wanteeed .btn-success[disabled]:hover,
+.popover-wanteeed fieldset[disabled] .btn-success:hover,
+.popover-wanteeed .btn-success.disabled:focus,
+.popover-wanteeed .btn-success[disabled]:focus,
+.popover-wanteeed fieldset[disabled] .btn-success:focus,
+.popover-wanteeed .btn-success.disabled:active,
+.popover-wanteeed .btn-success[disabled]:active,
+.popover-wanteeed fieldset[disabled] .btn-success:active,
+.popover-wanteeed .btn-success.disabled.active,
+.popover-wanteeed .btn-success[disabled].active,
+.popover-wanteeed fieldset[disabled] .btn-success.active {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.popover-wanteeed .btn-success .badge {
+  color: #5cb85c;
+  background-color: #ffffff;
+}
+.popover-wanteeed .btn-info {
+  color: #ffffff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.popover-wanteeed .btn-info:hover,
+.popover-wanteeed .btn-info:focus,
+.popover-wanteeed .btn-info:active,
+.popover-wanteeed .btn-info.active,
+.popover-wanteeed .open > .dropdown-toggle.btn-info {
+  color: #ffffff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+.popover-wanteeed .btn-info:active,
+.popover-wanteeed .btn-info.active,
+.popover-wanteeed .open > .dropdown-toggle.btn-info {
+  background-image: none;
+}
+.popover-wanteeed .btn-info.disabled,
+.popover-wanteeed .btn-info[disabled],
+.popover-wanteeed fieldset[disabled] .btn-info,
+.popover-wanteeed .btn-info.disabled:hover,
+.popover-wanteeed .btn-info[disabled]:hover,
+.popover-wanteeed fieldset[disabled] .btn-info:hover,
+.popover-wanteeed .btn-info.disabled:focus,
+.popover-wanteeed .btn-info[disabled]:focus,
+.popover-wanteeed fieldset[disabled] .btn-info:focus,
+.popover-wanteeed .btn-info.disabled:active,
+.popover-wanteeed .btn-info[disabled]:active,
+.popover-wanteeed fieldset[disabled] .btn-info:active,
+.popover-wanteeed .btn-info.disabled.active,
+.popover-wanteeed .btn-info[disabled].active,
+.popover-wanteeed fieldset[disabled] .btn-info.active {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.popover-wanteeed .btn-info .badge {
+  color: #5bc0de;
+  background-color: #ffffff;
+}
+.popover-wanteeed .btn-warning {
+  color: #ffffff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.popover-wanteeed .btn-warning:hover,
+.popover-wanteeed .btn-warning:focus,
+.popover-wanteeed .btn-warning:active,
+.popover-wanteeed .btn-warning.active,
+.popover-wanteeed .open > .dropdown-toggle.btn-warning {
+  color: #ffffff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+.popover-wanteeed .btn-warning:active,
+.popover-wanteeed .btn-warning.active,
+.popover-wanteeed .open > .dropdown-toggle.btn-warning {
+  background-image: none;
+}
+.popover-wanteeed .btn-warning.disabled,
+.popover-wanteeed .btn-warning[disabled],
+.popover-wanteeed fieldset[disabled] .btn-warning,
+.popover-wanteeed .btn-warning.disabled:hover,
+.popover-wanteeed .btn-warning[disabled]:hover,
+.popover-wanteeed fieldset[disabled] .btn-warning:hover,
+.popover-wanteeed .btn-warning.disabled:focus,
+.popover-wanteeed .btn-warning[disabled]:focus,
+.popover-wanteeed fieldset[disabled] .btn-warning:focus,
+.popover-wanteeed .btn-warning.disabled:active,
+.popover-wanteeed .btn-warning[disabled]:active,
+.popover-wanteeed fieldset[disabled] .btn-warning:active,
+.popover-wanteeed .btn-warning.disabled.active,
+.popover-wanteeed .btn-warning[disabled].active,
+.popover-wanteeed fieldset[disabled] .btn-warning.active {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.popover-wanteeed .btn-warning .badge {
+  color: #f0ad4e;
+  background-color: #ffffff;
+}
+.popover-wanteeed .btn-danger {
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.popover-wanteeed .btn-danger:hover,
+.popover-wanteeed .btn-danger:focus,
+.popover-wanteeed .btn-danger:active,
+.popover-wanteeed .btn-danger.active,
+.popover-wanteeed .open > .dropdown-toggle.btn-danger {
+  color: #ffffff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+.popover-wanteeed .btn-danger:active,
+.popover-wanteeed .btn-danger.active,
+.popover-wanteeed .open > .dropdown-toggle.btn-danger {
+  background-image: none;
+}
+.popover-wanteeed .btn-danger.disabled,
+.popover-wanteeed .btn-danger[disabled],
+.popover-wanteeed fieldset[disabled] .btn-danger,
+.popover-wanteeed .btn-danger.disabled:hover,
+.popover-wanteeed .btn-danger[disabled]:hover,
+.popover-wanteeed fieldset[disabled] .btn-danger:hover,
+.popover-wanteeed .btn-danger.disabled:focus,
+.popover-wanteeed .btn-danger[disabled]:focus,
+.popover-wanteeed fieldset[disabled] .btn-danger:focus,
+.popover-wanteeed .btn-danger.disabled:active,
+.popover-wanteeed .btn-danger[disabled]:active,
+.popover-wanteeed fieldset[disabled] .btn-danger:active,
+.popover-wanteeed .btn-danger.disabled.active,
+.popover-wanteeed .btn-danger[disabled].active,
+.popover-wanteeed fieldset[disabled] .btn-danger.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.popover-wanteeed .btn-danger .badge {
+  color: #d9534f;
+  background-color: #ffffff;
+}
+.popover-wanteeed .btn-link {
+  color: #428bca;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+}
+.popover-wanteeed .btn-link,
+.popover-wanteeed .btn-link:active,
+.popover-wanteeed .btn-link[disabled],
+.popover-wanteeed fieldset[disabled] .btn-link {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.popover-wanteeed .btn-link,
+.popover-wanteeed .btn-link:hover,
+.popover-wanteeed .btn-link:focus,
+.popover-wanteeed .btn-link:active {
+  border-color: transparent;
+}
+.popover-wanteeed .btn-link:hover,
+.popover-wanteeed .btn-link:focus {
+  color: #2a6496;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.popover-wanteeed .btn-link[disabled]:hover,
+.popover-wanteeed fieldset[disabled] .btn-link:hover,
+.popover-wanteeed .btn-link[disabled]:focus,
+.popover-wanteeed fieldset[disabled] .btn-link:focus {
+  color: #777777;
+  text-decoration: none;
+}
+.popover-wanteeed .btn-lg,
+.popover-wanteeed .btn-group-lg > .btn {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+.popover-wanteeed .btn-sm,
+.popover-wanteeed .btn-group-sm > .btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.popover-wanteeed .btn-xs,
+..popover-wanteeed btn-group-xs > .btn {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.popover-wanteeed .btn-block {
+  display: block;
+  width: 100%;
+}
+.popover-wanteeed .btn-block + .btn-block {
+  margin-top: 5px;
+}
+.popover-wanteeed input[type="submit"].btn-block,
+.popover-wanteeed input[type="reset"].btn-block,
+.popover-wanteeed input[type="button"].btn-block {
+  width: 100%;
+}
+.popover-wanteeed .btn-group,
+.popover-wanteeed .btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.popover-wanteeed .btn-group > .btn,
+.popover-wanteeed .btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+}
+.popover-wanteeed .btn-group > .btn:hover,
+.popover-wanteeed .btn-group-vertical > .btn:hover,
+.popover-wanteeed .btn-group > .btn:focus,
+.popover-wanteeed .btn-group-vertical > .btn:focus,
+.popover-wanteeed .btn-group > .btn:active,
+.popover-wanteeed .btn-group-vertical > .btn:active,
+.popover-wanteeed .btn-group > .btn.active,
+.popover-wanteeed .btn-group-vertical > .btn.active {
+  z-index: 2;
+}
+.popover-wanteeed .btn-group > .btn:focus,
+.popover-wanteeed .btn-group-vertical > .btn:focus {
+  outline: 0;
+}
+.popover-wanteeed .btn-group .btn + .btn,
+.popover-wanteeed .btn-group .btn + .btn-group,
+.popover-wanteeed .btn-group .btn-group + .btn,
+.popover-wanteeed .btn-group .btn-group + .btn-group {
+  margin-left: -1px;
+}
+.popover-wanteeed .btn-toolbar {
+  margin-left: -5px;
+}
+.popover-wanteeed .btn-toolbar .btn-group,
+.popover-wanteeed .btn-toolbar .input-group {
+  float: left;
+}
+.popover-wanteeed .btn-toolbar > .btn,
+.popover-wanteeed .btn-toolbar > .btn-group,
+.popover-wanteeed .btn-toolbar > .input-group {
+  margin-left: 5px;
+}
+.popover-wanteeed .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+.popover-wanteeed .btn-group > .btn:first-child {
+  margin-left: 0;
+}
+.popover-wanteeed .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.popover-wanteeed .btn-group > .btn:last-child:not(:first-child),
+.popover-wanteeed .btn-group > .dropdown-toggle:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.popover-wanteeed .btn-group > .btn-group {
+  float: left;
+}
+.popover-wanteeed .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.popover-wanteeed .btn-group > .btn-group:first-child > .btn:last-child,
+.popover-wanteeed .btn-group > .btn-group:first-child > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.popover-wanteeed .btn-group > .btn-group:last-child > .btn:first-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.popover-wanteeed .btn-group .dropdown-toggle:active,
+.popover-wanteeed .btn-group.open .dropdown-toggle {
+  outline: 0;
+}
+.popover-wanteeed .btn-group > .btn + .dropdown-toggle {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.popover-wanteeed .btn-group > .btn-lg + .dropdown-toggle {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.popover-wanteeed .btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.popover-wanteeed .btn-group.open .dropdown-toggle.btn-link {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.popover-wanteeed .btn .caret {
+  margin-left: 0;
+}
+.popover-wanteeed .btn-lg .caret {
+  border-width: 5px 5px 0;
+  border-bottom-width: 0;
+}
+.popover-wanteeed .dropup .btn-lg .caret {
+  border-width: 0 5px 5px;
+}
+.popover-wanteeed .btn-group-vertical > .btn,
+.popover-wanteeed .btn-group-vertical > .btn-group,
+.popover-wanteeed .btn-group-vertical > .btn-group > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+.popover-wanteeed .btn-group-vertical > .btn-group > .btn {
+  float: none;
+}
+.popover-wanteeed .btn-group-vertical > .btn + .btn,
+.popover-wanteeed .btn-group-vertical > .btn + .btn-group,
+.popover-wanteeed .btn-group-vertical > .btn-group + .btn,
+.popover-wanteeed .btn-group-vertical > .btn-group + .btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+.popover-wanteeed .btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.popover-wanteeed .btn-group-vertical > .btn:first-child:not(:last-child) {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.popover-wanteeed .btn-group-vertical > .btn:last-child:not(:first-child) {
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.popover-wanteeed .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.popover-wanteeed .btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.popover-wanteeed .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.popover-wanteeed .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.popover-wanteeed .btn-group-justified {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+.popover-wanteeed .btn-group-justified > .btn,
+.popover-wanteeed .btn-group-justified > .btn-group {
+  float: none;
+  display: table-cell;
+  width: 1%;
+}
+.popover-wanteeed .btn-group-justified > .btn-group .btn {
+  width: 100%;
+}
+.popover-wanteeed .btn-group-justified > .btn-group .dropdown-menu {
+  left: auto;
+}
+.popover-wanteeed [data-toggle="buttons"] > .btn > input[type="radio"],
+.popover-wanteeed [data-toggle="buttons"] > .btn > input[type="checkbox"] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.popover-wanteeed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  text-align: left;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  white-space: normal;
+  bottom:inherit ;
+}
+.popover-wanteeed.top {
+  margin-top: -10px;
+}
+.popover-wanteeed.right {
+  margin-left: 10px;
+}
+.popover-wanteeed.bottom {
+  margin-top: 10px;
+}
+.popover-wanteeed.left {
+  margin-left: -10px;
+}
+.popover-wanteeed .popover-title {
+  margin: 0;
+  padding: 8px 14px ;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+  text-align:center;
+}
+.popover-wanteeed .popover-content {
+  padding: 9px 14px;
+}
+.popover-wanteeed > .arrow,
+.popover-wanteeed > .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.popover-wanteeed > .arrow {
+  border-width: 11px;
+}
+.popover-wanteeed > .arrow:after {
+  border-width: 10px;
+  content: "";
+}
+.popover-wanteeed.top > .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-width: 0;
+  border-top-color: #999999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  bottom: -11px;
+}
+.popover-wanteeed.top > .arrow:after {
+  content: " ";
+  bottom: 1px;
+  margin-left: -10px;
+  border-bottom-width: 0;
+  border-top-color: #ffffff;
+}
+.popover-wanteeed.right > .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-left-width: 0;
+  border-right-color: #999999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+}
+.popover-wanteeed.right > .arrow:after {
+  content: " ";
+  left: 1px;
+  bottom: -10px;
+  border-left-width: 0;
+  border-right-color: #ffffff;
+}
+.popover-wanteeed.bottom > .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  top: -11px;
+}
+.popover-wanteeed.bottom > .arrow:after {
+  content: " ";
+  top: 1px;
+  margin-left: -10px;
+  border-top-width: 0;
+  border-bottom-color: #ffffff;
+}
+.popover-wanteeed.left > .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+.popover-wanteeed.left > .arrow:after {
+  content: " ";
+  right: 1px;
+  border-right-width: 0;
+  border-left-color: #ffffff;
+  bottom: -10px;
+}
+.tour-backdrop-wanteeed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1999998;
+  background-color: #000;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+.tour-step-backdrop-wanteeed {
+  position: relative;
+  z-index: 1999999;
+  background: inherit;
+}
+.tour-step-backdrop-wanteeed > td {
+  position: relative;
+  z-index: 1999999;
+}
+.tour-step-background-wanteeed {
+  position: absolute !important;
+  z-index: 1999998;
+  background: inherit;
+  border-radius: 6px;
+}
+.popover-wanteeed[class*="tour-"] {
+  z-index: 1999999;/* 1100;*/
+}
+.popover-wanteeed[class*="tour-"] .popover-navigation {
+  padding: 9px 14px;
+}
+.popover-wanteeed[class*="tour-"] .popover-navigation *[data-role="end"] {
+  float: right;
+}
+.popover-wanteeed[class*="tour-"] .popover-navigation *[data-role="prev"],
+.popover-wanteeed[class*="tour-"] .popover-navigation *[data-role="next"],
+.popover-wanteeed[class*="tour-"] .popover-navigation *[data-role="end"] {
+  cursor: pointer;
+}
+.popover-wanteeed[class*="tour-"] .popover-navigation *[data-role="prev"].disabled,
+.popover-wanteeed[class*="tour-"] .popover-navigation *[data-role="next"].disabled,
+.popover-wanteeed[class*="tour-"] .popover-navigation *[data-role="end"].disabled {
+  cursor: default;
+}
+.popover-wanteeed[class*="tour-"].orphan {
+  position: fixed;
+  margin-top: 0;
+}
+.popover-wanteeed[class*="tour-"].orphan .arrow {
+  display: none;
+}
+</style><style type="text/css">@font-face {font-family: MathJax_AMS; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf?V=2.7.1') format('opentype')}
+</style></head>
+	<body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://rantonels.github.io/">My Home</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://rantonels.github.io/starless/#">Raytracing</a></li>
+            <li><a href="http://spiro.fisica.unipd.it/~antonell/schwarzschild/">Real-time Black Hole</a></li>
+            <li><a href="http://github.com/rantonels/starless">Source</a></li>
+	    <li><a href="http://www.reddit.com/r/Physics/comments/2y61ed/my_new_opensource_black_hole_raytracer_and_a/">Reddit Post</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+		<div class="container">
+			<img src="./Raytracing a Black Hole_files/hm_out_small.jpg" class="align-center img-responsive">
+
+			<div class="col-md-12" style="margin-y:30px">
+				<h1 class="text-center">How to draw a Black Hole</h1>
+				<p class="lead text-center">Geodesic raytracing in curved spacetime</p>
+			</div>
+
+
+			<div class="row">
+				<p>It's now clear I'm on a Black Hole binge (I can stop when I want, by the way). They're endlessly fascinating. My recent interest was in particular focused on simulating visualizations of the Schwarzschild geometry. I was preoccupied by the problem of generating a decent accurate representation of how the curvature of such a spacetime affects the appearance of the sky (since photons from distance sources ride along geodesics bent by the Black Hole), for the purpose of creating an interactive simulation. <a href="http://spiro.fisica.unipd.it/~antonell/schwarzschild/">This</a> was the result (it runs in your browser). The trick was of course to precalculate as much as possible about the deflection of light rays. It worked ok-ish, but the simulation is of course very lacking in features, since it's not actually doing any raytracing (for the laymen: reconstructing the whereabouts of light rays incoming in the camera back in time) on its own.</p>
+
+				<p>This project, instead, aims to shatter these shortcoming by ditching efficiency/interactivity in the most naive way: it's a <strong>full CPU raytracer</strong>, taking all the time it needs to render pictures. The image above was rendered with this program - it took <s>15</s> 5 minutes (thanks, RK4) on my laptop.</p>
+
+				<p>This is neither anything new nor is it any better than how it's been done before. It's just really fun for me. I'm writing this page to share not only end-results such as the image above (<a href="http://imgur.com/a/kocqC">also because some people did it better</a>) but also the <strong>process of building these pictures</strong>, with a discussion/explanation of the physics involved and the implementation. Ideally, this could be of inspiration or guidance to people with a similar intent.</p>
+			</div>
+
+			<div class="row">
+				<h4 class="text-center">For most recent renders check <a href="http://rntnls.tumblr.com/tagged/starless">this tumblr tag</a></h4>
+			</div>
+
+
+			<div class="row">
+				<h1>A bit of pseudo-Riemannian optics</h1>
+			</div>
+
+			<div class="row">
+				<h2>The shadow</h2>
+				<p>If you have already tried my <a href="http://spiro.fisica.unipd.it/~antonell/schwarzschild/">live applet</a>, you should be familiar with this view:</p>
+				<a href="http://rantonels.github.io/starless/pics/00_new.jpg"><img src="./Raytracing a Black Hole_files/00_new_small.jpg" class="center-block img-responsive img-mrg"></a>
+
+				<p>You shouldn't have problems making out the salient feature of the image, namely the black disk and the weird distortion ring.</p>
+				<p>It's often pointed out that it's incorrect to say that the black disk is the event horizon. In fact, it's incorrect to say that <em>a region of an image</em> is <em>an object</em>. These are <strong>images</strong> of things. Now, it's true that there will be rays that, when backtraced from your eye, will end up in the event horizon. These will be black pixels, since no photon could ever have followed that path goin forward, from inside the black hole to your eye. This black disk is thus very clearly the <strong>image of the event horizon</strong>, in the sense that if you draw (in the far past) something right above the horizon, outside observers will be able to see it right on that black disk (we will actually perform this experiment later). This black region is also called "shadow" of the BH in some pulbications.</p>
+
+				<img src="./Raytracing a Black Hole_files/bhscattersmall.png" class="center-block img-responsive img-mrg">
+
+				<p>What it's interesting to note, however, is that this is at the same time <strong>the image of the photon sphere</strong>. The gnuplot graph above depicts geodesics of incoming photons from infinity (looking at the BH from far away zooming in) along with the EH (black) and the PS (green). The photon sphere is <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mfrac&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 0.896em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.717em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.074em, 1000.72em, 2.741em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mfrac" id="MathJax-Span-3"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.336em, 1000.3em, 4.17em, -999.997em); top: -4.402em; left: 50%; margin-left: -0.176em;"><span class="mn" id="MathJax-Span-4" style="font-size: 70.7%; font-family: MathJax_Main;">3</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.336em, 1000.3em, 4.17em, -999.997em); top: -3.568em; left: 50%; margin-left: -0.176em;"><span class="mn" id="MathJax-Span-5" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1000.48em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.479em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.568em; border-left: 0px solid; width: 0px; height: 1.718em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>3</mn><mn>2</mn></mfrac></math></span></span><script type="math/tex" id="MathJax-Element-1"> \frac{3}{2} </script> times the event horizon (in Schwarzschild <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-6" style="width: 0.539em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.42em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.551em, 1000.42em, 2.324em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-7"><span class="mi" id="MathJax-Span-8" style="font-family: MathJax_Math-italic;">r</span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 0.718em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">r</script>) and is the location where circular orbits of light around the BH are allowed (though unstable). In the graph, identify rays that fall to their death and those who get only scattered (and thus end up on another point on the celestial sphere). You see that absorbed rays are those arriving with an impact parameter of less than ~ 2.5 radii. This is the apparent radius of the black disk, and it's <strong>significantly larger</strong> than both the EH and the PS.</p>
+				
+				<p>Anyways, the relevant trivia here is this:</p>
+
+				<blockquote>A light ray infalling in the photon sphere in free fall will also reach the event horizon.</blockquote>
+				<p>This implies that the image of the photon sphere is included in that of the horizon. However, since the horizon is very clearly inside the photon sphere, the image of the former must also be a subset of that of the latter. Then the two images should coincide.</p><p>
+
+				</p><p>Why should you care that the black disk is also the image of the PS? Because it means that the <em>edge</em> of the black disk is populated by photons that <strong>skim</strong> the photon sphere. A pixel right outside the black disk corresponds to a photon that (when tracing backwards) spirals into the photon sphere, getting closer and closer to the unstable circular orbit, winding many times (the closer you look, the more it winds), then spiraling out - since the orbit is unstable - and escaping to infinity.</p>
+
+				<p>This behaviour will produce an interesting optical phenomenon and is basically getting close to a separatrix in a dynamical system. In the limit, a ray thrown exactly on the edge will spiral in forever, getting closer and closer to the photon sphere circular orbit.</p>
+
+			</div>
+
+			<div class="row">
+				<h2>The effect on the celestial sphere</h2>
+				<p>I'm not gonna focus a lot on this, because this was the main goal of the <a href="http://spiro.fisica.unipd.it/~antonell/schwarzschild">live applet</a>, and you can get a much better idea of the distortions induced on the sky through that (which also includes an UV grid option so the distortion is clearer).</p>
+				<p>Just a couple of things about the Einstein ring. The Einstein ring is distinguishable as an optical feature because it is the image of a single point, namely that on the sky directly opposite the observer. The ring forms at the view angle where rays from the observer are bent parallel. Outside of it, rays are not bent enough and remain divergent; inside, they are bent too much and converge and in fact can go backwards, or even wind around multiple times, as we've seen.</p>
+				<p>But then, think about this: if we get close enough to the black disk, light rays should be able to wind around once and then walk away parallel. There we should see a secondary Einstein ring. In fact, rings of any order (any number of windings.) Also, there should be "odd" rings inbetween where light rays are bent parallel, but directed towards the viewer. This infinite series of rings is there, but it's absolutely invisible in this image (in fact, in most of them) as they are very close to the disk edge.</p>
+
+			</div>
+
+			<div class="row">
+					<h2>The distortion of the Event Horizon</h2>
+					<a href="http://rantonels.github.io/starless/pics/01_new.jpg"><img src="./Raytracing a Black Hole_files/01_new_small.jpg" class="center-block img-responsive img-mrg"></a>
+
+					<p>In this new image, there are a couple of things that have changed. First of all, this was rendered at a higher resolution and with filtering for the background, so as to be more readable. Then, I've zoomed in on the hole (haven't gotten closer, we're still at ~ 10 radii, just zoomed in). But most importantly, I have drawn <strong>a grid on the horizon.</strong></p>
+					<p>The horizon is "just a sphere". Technically, it does not work like a standard Riemannian sphere with a spacial metric. The horizon is lightlike! A pictorial way of saying this is that it's going outwards at the speed of light. However, in Schwarzschild coordinates, it's still a <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-9" style="width: 2.741em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.265em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.372em, 1002.21em, 2.384em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-10"><span class="mi" id="MathJax-Span-11" style="font-family: MathJax_Math-italic;">r</span><span class="mo" id="MathJax-Span-12" style="font-family: MathJax_Main; padding-left: 0.301em;">=</span><span class="mn" id="MathJax-Span-13" style="font-family: MathJax_Main; padding-left: 0.301em;">1</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 0.932em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi><mo>=</mo><mn>1</mn></math></span></span><script type="math/tex" id="MathJax-Element-3">r=1</script> surface, and we can use <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03D5;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-14" style="width: 0.717em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1000.6em, 2.503em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-15"><span class="mi" id="MathJax-Span-16" style="font-family: MathJax_Math-italic;">ϕ</span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.282em; border-left: 0px solid; width: 0px; height: 1.218em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ϕ</mi></math></span></span><script type="math/tex" id="MathJax-Element-4">\phi</script> and <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B8;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-17" style="width: 0.598em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1000.48em, 2.324em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-18"><span class="mi" id="MathJax-Span-19" style="font-family: MathJax_Math-italic;">θ</span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>θ</mi></math></span></span><script type="math/tex" id="MathJax-Element-5">\theta</script> as longitude and latitude. So it's possible to draw a coordinate grid in a canonical way. Then what you're seeing is how that grid would look.</p>
+
+					<p>The grid allows us to take note of a peculiar fact we could have also deduced by analizing the photon scattering/absorption graph above: </p>
+					
+					<blockquote>The whole surface of the horizon is visible at the same time, from any point</blockquote>
+					<p>This is very interesting. When you look at a stationary sphere in standard flat spacetime, you can see at most 50% of its surface at any given time (less if you're closer, because of perspective). The horizon, instead, is <strong>all visible simultaneously</strong>, mapped in the black disk: notice in particular the North and South poles. However, while the surface of the EH is all there, <strong>it doesn't cover all of the black disk</strong>: if you zoomed in on the edge, you'd see that this image of the EH ends <em>before</em> the shadow ends. Namely you'll find a ring, very close to the outside edge, but not equal, which is an image of the point opposite the observer and delimits this "first" image of the EH inside. So what's inbetween this ring and the actual edge? I haven't yet bothered making a zoom to show this, but there's <em>another whole image of the event horizon squeezed in there</em>. And then another, and then another, ad infinitum. There are infinite concentric images of the whole horizon, squeezed on the shadow. <em>(Many thanks to <a href="http://www.reddit.com/user/xXxDeAThANgEL99xXx">/u/xXxDeAThANgEL99xXx</a> for pointing out this phenomenon, which I had overlooked.</em></p>
+
+
+			</div>
+
+			<div class="row">
+				<h2>Adding an accretion disk</h2>
+				<img src="./Raytracing a Black Hole_files/02smalledit.png" class="center-block img-responsive img-mrg">
+				<p>What modern black hole rendering would it be without an accretion disk? While it's certainly debatable whether Nolan's <em>Interstellar</em> was actually watchable, not to mention accurate, we can certainly thank the blockbuster for popularizing the particular way the image of an accretion disk is distorted. Here we have an infinitely thin, flat, horizontal accretion disk extending from the photon sphere (this is very unrealistic, orbits below <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;msub&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-20" style="width: 1.789em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.491em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.372em, 1001.49em, 2.562em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-21"><span class="mn" id="MathJax-Span-22" style="font-family: MathJax_Main;">3</span><span class="msubsup" id="MathJax-Span-23"><span style="display: inline-block; position: relative; width: 0.955em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.42em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-24" style="font-family: MathJax_Math-italic;">r</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -3.807em; left: 0.479em;"><span class="mi" id="MathJax-Span-25" style="font-size: 70.7%; font-family: MathJax_Math-italic;">S<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.282em; border-left: 0px solid; width: 0px; height: 1.146em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>3</mn><msub><mi>r</mi><mi>S</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-6">3 r_S </script> are unstable. More below) to 4 radii, coloured checkered white and blue on the top and white and green on the bottom. It is evident, with this colouring, that we've encountered another case of seeing 100% of something at the same time.</p>
+			       
+				<p>For this image, I moved the observer up a bit, so he can take a better look at the disk. You can see <strong>two main images of the disk</strong>, one of the upper face, and one, inside, of the lower. The blue image has the far section of the upper disk distorted to arch above the shadow of the BH. This happens because a ray pointing right above the black hole is bent down to meet the upper surface of the disk behind the hole, opposite the observer.</p>
+
+				<p>This also explains the very existence of the green image: rays going below are bent to meet the lower surface, still behind the hole. The green image, if you look closely, extends all around the shadow, but it's much thinner in the upper section. This corresponds to light rays that go above the BH, are bent into an almost full circle around the hole and hit the lower surface in the <strong>front</strong> section of the disk.</p>
+
+				<p>Of course, it's easy to deduce that there is an infinite series of accretion disk images, getting very quickly thinner and closer to the edge. The next-order image, in blue, is already very thin but faintly visible in the lower portion of the edge.</p>
+			</div>
+
+			<div class="row">
+				<h2>GIFs are still cool in 2015</h2>
+				<img src="./Raytracing a Black Hole_files/curvaturesmall.gif" class="center-block img-responsive img-mrg">
+				<p>In this spastic animation I turn the deflection of light on/off (formally, Schwarzschild/Minkowski) to make clear some of the points we went over before.</p>
+				<p>The lower surface is blue and not green because I'm lazy, use your imagination or something.</p>
+
+				<img src="./Raytracing a Black Hole_files/sbreng.gif" class="center-block img-responsive img-mrg">
+				<img src="./Raytracing a Black Hole_files/horizon.gif" class="center-block img-responsive img-mrg">
+				<p>These trippy .gifs, instead, were requested by some people. The observer is circling the black hole at 10 radii. This is not to be understood as an actual orbit, as there are no effect such as aberration from orbital velocity. This is to be understood as the observer taking a series of snapshots of the black hole while stationary, and moving from place to place inbetween frames; it's an "adiabatic" orbit, if you want.</p>
+			</div>
+
+			<div class="row">
+				<h2>Also stereo pics are still cool</h2>
+				<img src="./Raytracing a Black Hole_files/stereo.png" class="center-block img-responsive img-mrg">
+				<p>Interesting how the shadow looks pretty much flat.</p>
+			</div>
+
+			<div class="row">
+				<h1>Enough science.</h1>
+				<p>Enough with the informative pixelated 90's uni mainframe renderings with garish colors. Here's some "pop" renders (click for full size)
+			
+
+				</p><div class="row">
+					<div class="col-xs-6 col-md-6 ">
+						<div class="thumbnail">
+					    <a href="http://rantonels.github.io/starless/pics/xuWzJRn.jpg">
+					      <img src="./Raytracing a Black Hole_files/xuWzJRn_thumb.jpg">
+					    </a>
+					      <div class="caption">
+						This image was rendered by <a href="http://reddit.com/u/dfzxh">/u/dfzxh</a> with x4 supersampling.
+					      </div>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-6 ">
+						<div class="thumbnail">
+					    <a href="http://rantonels.github.io/starless/pics/wpmaterial.jpg">
+					      <img src="./Raytracing a Black Hole_files/wpmaterial_thumb.jpg">
+					    </a>
+					    <div class="caption">
+						    A closer look.
+					    </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 col-md-6 ">
+						<div class="thumbnail">
+					    <a href="http://rantonels.github.io/starless/pics/3dorder.jpg">
+					      <img src="./Raytracing a Black Hole_files/3dorder_thumb.jpg">
+					    </a>
+					    	<div class="caption">
+							Zoom on the ring images.
+						</div>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-6 ">
+						<div class="thumbnail">
+					    <a href="http://rantonels.github.io/starless/pics/taglio.jpg">
+					      <img src="./Raytracing a Black Hole_files/taglio_thumb.jpg">
+					     </a>
+						<div class="caption">
+						Iconic "ring of light" effect when looking from the equatorial plane.      
+					      </div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="col-xs-6 col-md-6 ">
+						<div class="thumbnail">
+					    <a href="./Raytracing a Black Hole_files/hm_out_small.jpg">
+					      <img src="./Raytracing a Black Hole_files/hm_out.jpg">
+					    </a>
+					    <div class="caption">
+						    If you download the program, this is the current default scene.
+						</div>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-6 ">
+						<div class="thumbnail">
+					    <a href="http://rantonels.github.io/starless/pics/blackhole2.jpg">
+					      <img src="./Raytracing a Black Hole_files/blackhole2_thumb.jpg">
+					    </a>
+					    <div class="caption">
+						    A much wider disc.
+						</div>
+						</div>
+					</div>
+
+				</div>
+
+				<p>Yeah, they're nothing special. Not an artist here. Let's get back temporarily to the science: the <a href="http://rantonels.github.io/starless/pics/3dorder.jpg">third image</a>, the one that doesn't seem to make any sense, is actually very precious. It's a zoom on the region between the upper edge of the black disk and the main ("first blue") image of the accretion disk. The observer is placed on the outer rim of the accretion disk itself and zooms in on this detail. The goal was to image as many orders of rings as possible. Three orders are visible: the lighter zone at the top is just the lower rim of the first image of the top-far surface of the disk. The strip at the bottom, below a calm sea of outstretched stars, is the superior part of the second image, the "first green" one, of the bottom-front of the disk. At the very bottom is a thin line of light not more than a pixel wide, glued to the black disk of the photon sphere. This is mainly the third image, the "second blue": it's the image again of the top-far surface, but after the light has completed an additional winding around the black hole. Merged with it, but increasingly thin, are all subsequent higher-order images. Ok, this is something worthy of &lt;blockquote&gt; tags:</p>
+				
+				<blockquote>There are infinite images of both the upper and lower surface of the accretion disk, and they all show the whole surface simultaneously. Moreover, except for the very first, these images don't pass in front of the black disk nor eachother, and are thus "concentric".</blockquote>
+				
+				<p>Marvelous.<br></p>
+
+				<div class="panel panel-default" style="margin-top:20px">
+					<div class="panel-body">
+					<h4>I'm taking render requests</h4>
+					<p>Are you interest in a specific render, but aren't willing to go through the trouble of installing the program and rendering it yourself? Just <a href="http://reddit.com/u/rantonels">hit me up on Reddit</a> or send me an e-mail. It takes no more than 10-20 minutes for 1080p on my laptop.</p>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="row">
+				<h1>Realistic accretion disc</h1>
+				<p>The accretion disc in the renders above is cartoony. It's just a disc with a stupid texture splattered on it. What happens when in the visual appearance of the disc we include physics-aware information? What happens when we include redshift from orbital motion, for example?</p>
+				<p>A popular model for an accretion disc is an infinitely thin disc of matter in almost circular orbit, starting at the ISCO (Innermost Stable Circular Orbit, <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-7-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;msub&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-26" style="width: 1.61em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.313em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.372em, 1001.31em, 2.562em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-27"><span class="mn" id="MathJax-Span-28" style="font-family: MathJax_Main;">3</span><span class="msubsup" id="MathJax-Span-29"><span style="display: inline-block; position: relative; width: 0.836em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.42em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-30" style="font-family: MathJax_Math-italic;">r</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -3.807em; left: 0.479em;"><span class="mi" id="MathJax-Span-31" style="font-size: 70.7%; font-family: MathJax_Math-italic;">s</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.282em; border-left: 0px solid; width: 0px; height: 1.146em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>3</mn><msub><mi>r</mi><mi>s</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-7">3 r_s</script>), with a power law temperature profile <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-8-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo&gt;&amp;#x223C;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-32" style="width: 4.17em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.455em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1003.46em, 2.384em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-33"><span class="mi" id="MathJax-Span-34" style="font-family: MathJax_Math-italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.122em;"></span></span><span class="mo" id="MathJax-Span-35" style="font-family: MathJax_Main; padding-left: 0.301em;">∼</span><span class="msubsup" id="MathJax-Span-36" style="padding-left: 0.301em;"><span style="display: inline-block; position: relative; width: 1.432em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.42em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-37" style="font-family: MathJax_Math-italic;">r</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.342em; left: 0.479em;"><span class="texatom" id="MathJax-Span-38"><span class="mrow" id="MathJax-Span-39"><span class="mo" id="MathJax-Span-40" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mi" id="MathJax-Span-41" style="font-size: 70.7%; font-family: MathJax_Math-italic;">a</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.075em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi><mo>∼</mo><msup><mi>r</mi><mrow class="MJX-TeXAtom-ORD"><mo>−</mo><mi>a</mi></mrow></msup></math></span></span><script type="math/tex" id="MathJax-Element-8">T \sim r^{-a} </script>. I'll use the extremely simple
+
+				<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-9-Frame" tabindex="0" style="text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo&gt;&amp;#x223C;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;/mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-42" style="width: 5.003em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.17em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.074em, 1004.17em, 2.384em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-43"><span class="mi" id="MathJax-Span-44" style="font-family: MathJax_Math-italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.122em;"></span></span><span class="mo" id="MathJax-Span-45" style="font-family: MathJax_Main; padding-left: 0.301em;">∼</span><span class="msubsup" id="MathJax-Span-46" style="padding-left: 0.301em;"><span style="display: inline-block; position: relative; width: 2.146em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.42em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-47" style="font-family: MathJax_Math-italic;">r</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.402em; left: 0.479em;"><span class="texatom" id="MathJax-Span-48"><span class="mrow" id="MathJax-Span-49"><span class="mo" id="MathJax-Span-50" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mn" id="MathJax-Span-51" style="font-size: 70.7%; font-family: MathJax_Main;">3</span><span class="texatom" id="MathJax-Span-52"><span class="mrow" id="MathJax-Span-53"><span class="mo" id="MathJax-Span-54" style="font-size: 70.7%; font-family: MathJax_Main;">/</span></span></span><span class="mn" id="MathJax-Span-55" style="font-size: 70.7%; font-family: MathJax_Main;">4</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.289em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>T</mi><mo>∼</mo><msup><mi>r</mi><mrow class="MJX-TeXAtom-ORD"><mo>−</mo><mn>3</mn><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mn>4</mn></mrow></msup></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-9"> T \sim r^{-3/4} </script>
+
+				which is most definitely not ok in GR for realistic fluids, but it'll do (you'll see it's not like you can tell the difference anyway).</p>
+
+				<p>A free parameter now is the overall scale for the temperatures, for example the temperature at the ISCO. This temperature is <strong>immense</strong> for most black holes. We're talking <strong>hundreds of millions</strong> of Kelvin; it's difficult to imagine any human artefact that could <em>survive</em> being exposed to the light (peaking in X-rays) of a disc at those temperatures, let alone capture anything meaningful on a CCD. We then really have to tone it down. Apparently supermassive black holes are colder, but not enough. We need to pull it down to around 10 000 K at the ISCO for us to be able to see anything. This is highly unaccurate, but it's all I can do.</p>
+
+				<p>We need to ask ourselves two questions. One: <strong>what colour</strong> is a blackbody at that temperature. Two: <strong>how bright</strong> is it? Formally, the answer to those two questions is in the scalar product of the functions describing R,G,B channels with the black body spectrum. In practice, one uses some approximations.</p>
+
+				<p>For colour, <a href="http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/">this formula</a> by Tanner Helland is accurate and efficient, but it involves numerous conditionals which are not feasible with my raytracing setup (see below for details). The fastest way is to use a lookup texture:</p>
+				<img src="./Raytracing a Black Hole_files/scale03_E.jpg" class="center-block img-responsive img-mrg">
+
+				<p>This texture is one of many goodies from <a href="http://www.vendian.org/mncharity/dir3/blackbody/">Mitchell Charity's "What color is a blackbody?"</a>. (For reference, it corresponds to whitepoint E).</p>
+
+				<p>This runs from 1000 K to 30 000 K, higher temperatures are basically the same shade of blue. Since there is an immense difference in brightness between temperatures, this texture cannot and does not encode brightness; rather, the colours are normalized. It is our duty to compute relative brightness and multiply. We can use an analytic formula for that. If we assume that the visible spectrumis very narrow, then the total visible intensity is proportional to the blackbody spectrum itself:
+
+				<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-10-Frame" tabindex="0" style="text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mi&gt;&amp;#x03BB;&lt;/mi&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/msup&gt;&lt;/mfrac&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow&gt;&lt;mi&gt;exp&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;&amp;#x03BB;&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-56" style="width: 9.467em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.86em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.598em, 1007.86em, 3.753em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-57"><span class="mfrac" id="MathJax-Span-58"><span style="display: inline-block; position: relative; width: 1.134em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.158em, 1000.42em, 4.17em, -999.997em); top: -4.64em; left: 50%; margin-left: -0.235em;"><span class="mn" id="MathJax-Span-59" style="font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.039em, 1001.01em, 4.17em, -999.997em); top: -3.211em; left: 50%; margin-left: -0.473em;"><span class="msubsup" id="MathJax-Span-60"><span style="display: inline-block; position: relative; width: 1.015em; height: 0px;"><span style="position: absolute; clip: rect(3.098em, 1000.54em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-61" style="font-family: MathJax_Math-italic;">λ</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.283em; left: 0.598em;"><span class="mn" id="MathJax-Span-62" style="font-size: 70.7%; font-family: MathJax_Main;">5</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1001.13em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.134em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span><span class="mfrac" id="MathJax-Span-63"><span style="display: inline-block; position: relative; width: 6.253em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.158em, 1000.42em, 4.17em, -999.997em); top: -4.64em; left: 50%; margin-left: -0.235em;"><span class="mn" id="MathJax-Span-64" style="font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(2.92em, 1006.07em, 4.705em, -999.997em); top: -3.092em; left: 50%; margin-left: -3.092em;"><span class="mrow" id="MathJax-Span-65"><span class="mi" id="MathJax-Span-66" style="font-family: MathJax_Main;">exp</span><span class="mo" id="MathJax-Span-67"></span><span class="mo" id="MathJax-Span-68" style="font-family: MathJax_Main;">(</span><span class="mfrac" id="MathJax-Span-69"><span style="display: inline-block; position: relative; width: 1.848em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.336em, 1000.72em, 4.17em, -999.997em); top: -4.402em; left: 50%; margin-left: -0.354em;"><span class="mrow" id="MathJax-Span-70"><span class="mi" id="MathJax-Span-71" style="font-size: 70.7%; font-family: MathJax_Math-italic;">h</span><span class="mi" id="MathJax-Span-72" style="font-size: 70.7%; font-family: MathJax_Math-italic;">c</span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.336em, 1001.73em, 4.289em, -999.997em); top: -3.568em; left: 50%; margin-left: -0.83em;"><span class="mrow" id="MathJax-Span-73"><span class="mi" id="MathJax-Span-74" style="font-size: 70.7%; font-family: MathJax_Math-italic;">λ</span><span class="msubsup" id="MathJax-Span-75"><span style="display: inline-block; position: relative; width: 0.777em; height: 0px;"><span style="position: absolute; clip: rect(3.336em, 1000.36em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-76" style="font-size: 70.7%; font-family: MathJax_Math-italic;">k</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -3.866em; left: 0.36em;"><span class="mi" id="MathJax-Span-77" style="font-size: 50%; font-family: MathJax_Math-italic;">B</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mi" id="MathJax-Span-78" style="font-size: 70.7%; font-family: MathJax_Math-italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1001.85em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.848em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span><span class="mo" id="MathJax-Span-79" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-80" style="font-family: MathJax_Main; padding-left: 0.241em;">−</span><span class="mn" id="MathJax-Span-81" style="font-family: MathJax_Main; padding-left: 0.241em;">1</span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1006.25em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 6.253em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -1.782em; border-left: 0px solid; width: 0px; height: 3.504em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mfrac><mn>1</mn><msup><mi>λ</mi><mn>5</mn></msup></mfrac><mfrac><mn>1</mn><mrow><mi>exp</mi><mo>⁡</mo><mo stretchy="false">(</mo><mfrac><mrow><mi>h</mi><mi>c</mi></mrow><mrow><mi>λ</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></mfrac><mo stretchy="false">)</mo><mo>−</mo><mn>1</mn></mrow></mfrac></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-10"> \frac{1}{\lambda^5} \frac{1}{ \exp( \frac{hc}{\lambda k_B T}) - 1 } </script>
+
+				where I got rid of stupid overall constants (we're going to rescale brightness anyway to see anything). We can just plug in <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-11-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03BB;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-82" style="width: 0.717em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1000.6em, 2.324em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-83"><span class="mi" id="MathJax-Span-84" style="font-family: MathJax_Math-italic;">λ</span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>λ</mi></math></span></span><script type="math/tex" id="MathJax-Element-11">\lambda</script> roughly in the visible spectrum range and we get that brightness is proportional to:
+
+				<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-12-Frame" tabindex="0" style="text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mn&gt;29622.4&lt;/mn&gt;&lt;mtext&gt;K&lt;/mtext&gt;&lt;/mrow&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-85" style="width: 7.741em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.432em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.896em, 1006.43em, 2.622em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-86"><span class="mo" id="MathJax-Span-87" style="font-family: MathJax_Main;">(</span><span class="msubsup" id="MathJax-Span-88"><span style="display: inline-block; position: relative; width: 2.92em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.42em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-89" style="font-family: MathJax_Math-italic;">e</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.402em; left: 0.479em;"><span class="texatom" id="MathJax-Span-90"><span class="mrow" id="MathJax-Span-91"><span class="mfrac" id="MathJax-Span-92"><span style="display: inline-block; position: relative; width: 2.146em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.455em, 1002.03em, 4.17em, -999.997em); top: -4.342em; left: 50%; margin-left: -1.009em;"><span class="mrow" id="MathJax-Span-93"><span class="mn" id="MathJax-Span-94" style="font-size: 50%; font-family: MathJax_Main;">29622.4</span><span class="mtext" id="MathJax-Span-95" style="font-size: 50%; font-family: MathJax_Main;">K</span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.455em, 1000.36em, 4.17em, -999.997em); top: -3.628em; left: 50%; margin-left: -0.176em;"><span class="mi" id="MathJax-Span-96" style="font-size: 50%; font-family: MathJax_Math-italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1002.15em, 1.253em, -999.997em); top: -1.188em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 2.146em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-97" style="font-family: MathJax_Main; padding-left: 0.241em;">−</span><span class="mn" id="MathJax-Span-98" style="font-family: MathJax_Main; padding-left: 0.241em;">1</span><span class="msubsup" id="MathJax-Span-99"><span style="display: inline-block; position: relative; width: 1.372em; height: 0px;"><span style="position: absolute; clip: rect(3.039em, 1000.3em, 4.408em, -999.997em); top: -3.985em; left: 0em;"><span class="mo" id="MathJax-Span-100" style="font-family: MathJax_Main;">)</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.402em; left: 0.42em;"><span class="texatom" id="MathJax-Span-101"><span class="mrow" id="MathJax-Span-102"><span class="mo" id="MathJax-Span-103" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mn" id="MathJax-Span-104" style="font-size: 70.7%; font-family: MathJax_Main;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.789em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mo stretchy="false">(</mo><msup><mi>e</mi><mrow class="MJX-TeXAtom-ORD"><mfrac><mrow><mn>29622.4</mn><mtext>K</mtext></mrow><mi>T</mi></mfrac></mrow></msup><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD"><mo>−</mo><mn>1</mn></mrow></msup></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-12"> ( e^ { \frac{29622.4 \text{K}}{T}  } - 1 )^{-1} </script>
+
+				That's easy enough. As a check, we note that relative intensity quickly drops to zero when T goes to zero, and is only linear in T as T goes to infinity. </p>
+
+				
+				<h3>Redshift</h3>
+
+				<p>I discusses the orbital speeds in the Schwarzschild geometry in the explanation for the live applet. To compute redshift, we use the special-relativistic redshift formula:
+
+	    <span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-13-Frame" tabindex="0" style="text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;msub&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mtext&gt;Doppler&lt;/mtext&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;&amp;#x03B2;&lt;/mi&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;&amp;#x03B8;&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;msqrt&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;&amp;#x03B2;&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/msqrt&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-105" style="width: 14.884em; display: inline-block;"><span style="display: inline-block; position: relative; width: 12.384em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.539em, 1012.38em, 3.574em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-106"><span class="mo" id="MathJax-Span-107" style="font-family: MathJax_Main;">(</span><span class="mn" id="MathJax-Span-108" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-109" style="font-family: MathJax_Main; padding-left: 0.241em;">+</span><span class="mi" id="MathJax-Span-110" style="font-family: MathJax_Math-italic; padding-left: 0.241em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="msubsup" id="MathJax-Span-111"><span style="display: inline-block; position: relative; width: 2.92em; height: 0px;"><span style="position: absolute; clip: rect(3.039em, 1000.3em, 4.408em, -999.997em); top: -3.985em; left: 0em;"><span class="mo" id="MathJax-Span-112" style="font-family: MathJax_Main;">)</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -3.807em; left: 0.42em;"><span class="mtext" id="MathJax-Span-113" style="font-size: 70.7%; font-family: MathJax_Main;">Doppler</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-114" style="font-family: MathJax_Main; padding-left: 0.301em;">=</span><span class="mfrac" id="MathJax-Span-115" style="padding-left: 0.301em;"><span style="display: inline-block; position: relative; width: 5.241em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.039em, 1005em, 4.408em, -999.997em); top: -4.699em; left: 50%; margin-left: -2.557em;"><span class="mrow" id="MathJax-Span-116"><span class="mn" id="MathJax-Span-117" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-118" style="font-family: MathJax_Main; padding-left: 0.241em;">−</span><span class="mi" id="MathJax-Span-119" style="font-family: MathJax_Math-italic; padding-left: 0.241em;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-120" style="font-family: MathJax_Main; padding-left: 0.182em;">cos</span><span class="mo" id="MathJax-Span-121"></span><span class="mo" id="MathJax-Span-122" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-123" style="font-family: MathJax_Math-italic;">θ</span><span class="mo" id="MathJax-Span-124" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(2.92em, 1003.81em, 4.467em, -999.997em); top: -3.092em; left: 50%; margin-left: -1.902em;"><span class="msqrt" id="MathJax-Span-125"><span style="display: inline-block; position: relative; width: 3.812em; height: 0px;"><span style="position: absolute; clip: rect(3.039em, 1002.8em, 4.348em, -999.997em); top: -3.985em; left: 1.015em;"><span class="mrow" id="MathJax-Span-126"><span class="mn" id="MathJax-Span-127" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-128" style="font-family: MathJax_Main; padding-left: 0.241em;">−</span><span class="msubsup" id="MathJax-Span-129" style="padding-left: 0.241em;"><span style="display: inline-block; position: relative; width: 1.074em; height: 0px;"><span style="position: absolute; clip: rect(3.098em, 1000.6em, 4.348em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-130" style="font-family: MathJax_Math-italic;">β<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.283em; left: 0.658em;"><span class="mn" id="MathJax-Span-131" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.515em, 1002.86em, 3.932em, -999.997em); top: -4.58em; left: 1.015em;"><span style="display: inline-block; position: relative; width: 2.86em; height: 0px;"><span style="position: absolute; font-family: MathJax_Main; top: -3.985em; left: -0.057em;">−<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; font-family: MathJax_Main; top: -3.985em; left: 2.146em;">−<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -3.985em; left: 0.479em;">−<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -3.985em; left: 1.015em;">−<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -3.985em; left: 1.61em;">−<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(2.979em, 1001.01em, 4.527em, -999.997em); top: -4.045em; left: 0em;"><span style="font-family: MathJax_Size1;">√</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1005.24em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 5.241em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -1.496em; border-left: 0px solid; width: 0px; height: 3.361em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>z</mi><msub><mo stretchy="false">)</mo><mtext>Doppler</mtext></msub><mo>=</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>β</mi><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><msqrt><mn>1</mn><mo>−</mo><msup><mi>β</mi><mn>2</mn></msup></msqrt></mfrac></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-13">(1+z)_\text{Doppler} = \frac{ 1 - \beta \cos(\theta) } {\sqrt{1-\beta^2} } </script>
+
+				Where as <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-14-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;&amp;#x03B8;&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-132" style="width: 3.098em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.562em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1002.44em, 2.622em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-133"><span class="mi" id="MathJax-Span-134" style="font-family: MathJax_Main;">cos</span><span class="mo" id="MathJax-Span-135"></span><span class="mo" id="MathJax-Span-136" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-137" style="font-family: MathJax_Math-italic;">θ</span><span class="mo" id="MathJax-Span-138" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.361em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-14">\cos(\theta) </script> is the cosine of the angle between the ray direction when it's emitted by the disc and the disc local velocity, all computed in the local inertial frame associated with the Schwarzschild coordinates. This formula is correct in this context because muh equivalence principle.</p>
+
+				<p>This is to be multiplied with the gravitational redshift factor:
+
+				<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-15-Frame" tabindex="0" style="text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;msub&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mtext&gt;Gravitational&lt;/mtext&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;msup&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-139" style="width: 17.146em; display: inline-block;"><span style="display: inline-block; position: relative; width: 14.289em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.074em, 1014.29em, 2.622em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-140"><span class="mo" id="MathJax-Span-141" style="font-family: MathJax_Main;">(</span><span class="mn" id="MathJax-Span-142" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-143" style="font-family: MathJax_Main; padding-left: 0.241em;">+</span><span class="mi" id="MathJax-Span-144" style="font-family: MathJax_Math-italic; padding-left: 0.241em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="msubsup" id="MathJax-Span-145"><span style="display: inline-block; position: relative; width: 4.646em; height: 0px;"><span style="position: absolute; clip: rect(3.039em, 1000.3em, 4.408em, -999.997em); top: -3.985em; left: 0em;"><span class="mo" id="MathJax-Span-146" style="font-family: MathJax_Main;">)</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -3.807em; left: 0.42em;"><span class="mtext" id="MathJax-Span-147" style="font-size: 70.7%; font-family: MathJax_Main;">Gravitational</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-148" style="font-family: MathJax_Main; padding-left: 0.301em;">=</span><span class="mo" id="MathJax-Span-149" style="font-family: MathJax_Main; padding-left: 0.301em;">(</span><span class="mn" id="MathJax-Span-150" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-151" style="font-family: MathJax_Main; padding-left: 0.241em;">−</span><span class="msubsup" id="MathJax-Span-152" style="padding-left: 0.241em;"><span style="display: inline-block; position: relative; width: 1.432em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.42em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-153" style="font-family: MathJax_Math-italic;">r</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.402em; left: 0.479em;"><span class="texatom" id="MathJax-Span-154"><span class="mrow" id="MathJax-Span-155"><span class="mo" id="MathJax-Span-156" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mn" id="MathJax-Span-157" style="font-size: 70.7%; font-family: MathJax_Main;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-158"><span style="display: inline-block; position: relative; width: 2.086em; height: 0px;"><span style="position: absolute; clip: rect(3.039em, 1000.3em, 4.408em, -999.997em); top: -3.985em; left: 0em;"><span class="mo" id="MathJax-Span-159" style="font-family: MathJax_Main;">)</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.402em; left: 0.42em;"><span class="texatom" id="MathJax-Span-160"><span class="mrow" id="MathJax-Span-161"><span class="mo" id="MathJax-Span-162" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mn" id="MathJax-Span-163" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span class="texatom" id="MathJax-Span-164"><span class="mrow" id="MathJax-Span-165"><span class="mo" id="MathJax-Span-166" style="font-size: 70.7%; font-family: MathJax_Main;">/</span></span></span><span class="mn" id="MathJax-Span-167" style="font-size: 70.7%; font-family: MathJax_Main;">2</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.575em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>z</mi><msub><mo stretchy="false">)</mo><mtext>Gravitational</mtext></msub><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>r</mi><mrow class="MJX-TeXAtom-ORD"><mo>−</mo><mn>1</mn></mrow></msup><msup><mo stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD"><mo>−</mo><mn>1</mn><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mn>2</mn></mrow></msup></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-15">(1+z)_\text{Gravitational} = (1 - r^{-1})^{-1/2} </script>
+
+				this factor does not depend on the path of the light ray, only on the emission radius, because the Schwarzschild geometry is stationary.</p>
+
+				<p>This also means that the contribution to gravitational redshift due to the position of the observer is constant over the whole field of view. All our image gets a constant overall blueshift because we're deep in the hole's well. This effect therefore is just applying a tint over our image, and we ignore it.</p>
+				
+				<p>We also neglect redshift from observer motion, because our observer is Schwarzschild-stationary. The final result is this:</p><p>
+
+				<img src="./Raytracing a Black Hole_files/bab_yesint.jpg" class="center-block img-responsive img-mrg">
+				
+				</p><p>As you can see, most of the disc is completely white, because it saturates the colour channels. If I scale down those channels to fit in the 0.0-1.0 range, the outer parts of the disk become faint or black. The growth in brightness is too large for us to appreciate. I've tried to depict it in postprocessing through a bloom effect to make really bright parts bleed instead of just clip, but it's hardly sufficient.</p>
+
+				<p>Quite a confusing picture. Here's a picture with the intensity ignored, so you can appreciate the colours:</p>
+
+				<img src="./Raytracing a Black Hole_files/bab_noint.jpg" class="center-block img-responsive img-mrg">
+
+				<p>These are at a smaller resolution because they take <em>so long</em> to render on my laptop (square roots are bad, kids).</p>
+				<p>Anyways, it looks thousands of time less scenographic than the other renders (mostly because the inner edge of the disk is already far away enough from the EH that lensing looks quite underwhelming), but at least it's <em>accurate</em>, if you managed to find a 10 000 K black hole and some really good sunglasses, that is.</p>
+
+				<p>Another shot from a closer distance. I tweaked saturation unnaturally up so you can tell better:</p>
+
+				<img src="./Raytracing a Black Hole_files/bab_front.jpg" class="center-block img-responsive img-mrg">	
+
+
+			</div>
+
+			<div class="row">
+				<h1>Writing a black hole raytracer</h1>
+				<h3><a href="https://github.com/rantonels/starless">Source on Github</a></h3>
+				<p>There is very obviously a massive difference between understanding the qualitative aspects of black hole optics and building a numerical integrator that spits out 1080p ok-ish wallpaper material. Last time I neglected the aspect of explaining my thought processes in coding and I put up a really messy git repo. I want to go a little more in detail now and will try to mantain the code tidier and commented.</p>
+				<p>I don't want this raytracer to be good, solid, fast. I want it to be easy and hackable, so that people can be <em>inspired</em> by it, may it be because they see potential for improvement or because it's so sh***y it makes them want to make their own. So here's a quick walkthrough of the algorithms and implementation.</p>
+			</div>
+
+			<div class="row">
+				<h2>The "magic" potential</h2>
+				<p>So, General Relativity, right. Easy. Take the Schwarzschild metric, find the Christoffel symbols, find their derivative, write down the geodesic equation, change to some cartesian coordinates to avoid endless suffering, get an immense multiline ODE, integrate. That's pretty much it.</p>
+
+				<p>Just kidding. Of course there's a trick.</p>
+
+				<p>If you remember <a href="http://spiro.fisica.unipd.it/~antonell/schwarzschild/">last time</a>, I derived the following equation for the orbit of a massless particle in its orbital plane in a Schwarzschild geometry (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-16-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-168" style="width: 4.11em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.396em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1003.4em, 2.622em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-169"><span class="mi" id="MathJax-Span-170" style="font-family: MathJax_Math-italic;">u</span><span class="mo" id="MathJax-Span-171" style="font-family: MathJax_Main; padding-left: 0.301em;">=</span><span class="mn" id="MathJax-Span-172" style="font-family: MathJax_Main; padding-left: 0.301em;">1</span><span class="texatom" id="MathJax-Span-173"><span class="mrow" id="MathJax-Span-174"><span class="mo" id="MathJax-Span-175" style="font-family: MathJax_Main;">/</span></span></span><span class="mi" id="MathJax-Span-176" style="font-family: MathJax_Math-italic;">r</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.361em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>u</mi><mo>=</mo><mn>1</mn><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mi>r</mi></math></span></span><script type="math/tex" id="MathJax-Element-16">u=1/r</script>):
+
+				<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-17-Frame" tabindex="0" style="text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msup&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo&gt;&amp;#x2033;&lt;/mo&gt;&lt;/msup&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;&amp;#x03D5;&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;msup&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-177" style="width: 8.932em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.443em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.658em, 1007.44em, 3.098em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-178"><span class="msup" id="MathJax-Span-179"><span style="display: inline-block; position: relative; width: 1.015em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.54em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-180" style="font-family: MathJax_Math-italic;">u</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.402em; left: 0.598em;"><span class="mo" id="MathJax-Span-181" style="font-size: 70.7%; font-family: MathJax_Main;">′′</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-182" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-183" style="font-family: MathJax_Math-italic;">ϕ</span><span class="mo" id="MathJax-Span-184" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-185" style="font-family: MathJax_Main; padding-left: 0.241em;">+</span><span class="mi" id="MathJax-Span-186" style="font-family: MathJax_Math-italic; padding-left: 0.241em;">u</span><span class="mo" id="MathJax-Span-187" style="font-family: MathJax_Main; padding-left: 0.301em;">=</span><span class="mfrac" id="MathJax-Span-188" style="padding-left: 0.301em;"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.158em, 1000.48em, 4.17em, -999.997em); top: -4.64em; left: 50%; margin-left: -0.235em;"><span class="mn" id="MathJax-Span-189" style="font-family: MathJax_Main;">3</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.158em, 1000.48em, 4.17em, -999.997em); top: -3.271em; left: 50%; margin-left: -0.235em;"><span class="mn" id="MathJax-Span-190" style="font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1000.6em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.598em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-191"><span style="display: inline-block; position: relative; width: 1.015em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.54em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-192" style="font-family: MathJax_Math-italic;">u</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.402em; left: 0.598em;"><span class="mn" id="MathJax-Span-193" style="font-size: 70.7%; font-family: MathJax_Main;">3</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.925em; border-left: 0px solid; width: 0px; height: 2.575em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>u</mi><mo>″</mo></msup><mo stretchy="false">(</mo><mi>ϕ</mi><mo stretchy="false">)</mo><mo>+</mo><mi>u</mi><mo>=</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><msup><mi>u</mi><mn>3</mn></msup></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-17"> u''(\phi) + u = \frac{3}{2} u^3 </script>
+
+				The trick is to recognize that this is in the form of a <strong>Binet equation</strong>. If you have an absolutely massive and Newtonian particle in a Newtonian central potential:
+
+				<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-18-Frame" tabindex="0" style="text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mfrac&gt;&lt;msup&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mrow&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x2192;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mfrac&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-194" style="width: 8.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.848em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.539em, 1006.73em, 3.158em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-195"><span class="mfrac" id="MathJax-Span-196"><span style="display: inline-block; position: relative; width: 1.432em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(2.979em, 1001.01em, 4.17em, -999.997em); top: -4.64em; left: 50%; margin-left: -0.473em;"><span class="msubsup" id="MathJax-Span-197"><span style="display: inline-block; position: relative; width: 1.015em; height: 0px;"><span style="position: absolute; clip: rect(3.098em, 1000.54em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-198" style="font-family: MathJax_Math-italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.342em; left: 0.598em;"><span class="mn" id="MathJax-Span-199" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.039em, 1001.31em, 4.17em, -999.997em); top: -3.211em; left: 50%; margin-left: -0.652em;"><span class="mrow" id="MathJax-Span-200"><span class="mi" id="MathJax-Span-201" style="font-family: MathJax_Math-italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="msubsup" id="MathJax-Span-202"><span style="display: inline-block; position: relative; width: 0.777em; height: 0px;"><span style="position: absolute; clip: rect(3.158em, 1000.36em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-203" style="font-family: MathJax_Math-italic;">t</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.283em; left: 0.36em;"><span class="mn" id="MathJax-Span-204" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1001.43em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.432em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span><span class="texatom" id="MathJax-Span-205"><span class="mrow" id="MathJax-Span-206"><span class="munderover" id="MathJax-Span-207"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.54em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-208" style="font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.045em; left: 0.122em;"><span style="height: 0em; vertical-align: 0em; width: 0.479em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-209" style="font-family: MathJax_Main;">⃗&nbsp;<span style="height: 0em; vertical-align: 0em; margin-left: -0.235em;"></span></span><span style="display: inline-block; overflow: hidden; height: 1px; width: 0em;"></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span></span><span class="mo" id="MathJax-Span-210" style="font-family: MathJax_Main; padding-left: 0.301em;">=</span><span class="mfrac" id="MathJax-Span-211" style="padding-left: 0.301em;"><span style="display: inline-block; position: relative; width: 1.015em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.158em, 1000.42em, 4.17em, -999.997em); top: -4.64em; left: 50%; margin-left: -0.235em;"><span class="mn" id="MathJax-Span-212" style="font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.396em, 1000.84em, 4.17em, -999.997em); top: -3.271em; left: 50%; margin-left: -0.414em;"><span class="mi" id="MathJax-Span-213" style="font-family: MathJax_Math-italic;">m</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1001.01em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.015em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span><span class="mi" id="MathJax-Span-214" style="font-family: MathJax_Math-italic;">F<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.122em;"></span></span><span class="mo" id="MathJax-Span-215" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-216" style="font-family: MathJax_Math-italic;">r</span><span class="mo" id="MathJax-Span-217" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.996em; border-left: 0px solid; width: 0px; height: 2.861em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mfrac><msup><mi>d</mi><mn>2</mn></msup><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mrow class="MJX-TeXAtom-ORD"><mover><mi>x</mi><mo stretchy="false">→</mo></mover></mrow><mo>=</mo><mfrac><mn>1</mn><mi>m</mi></mfrac><mi>F</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-18"> \frac{d^2}{dt^2} \vec x = \frac{1}{m} F(r) </script>
+
+				then the particle will obviously move in its orbital plane, and will satisfy the Binet equation for <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-19-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;&amp;#x03D5;&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-218" style="width: 2.384em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.967em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1001.85em, 2.622em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-219"><span class="mi" id="MathJax-Span-220" style="font-family: MathJax_Math-italic;">u</span><span class="mo" id="MathJax-Span-221" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-222" style="font-family: MathJax_Math-italic;">ϕ</span><span class="mo" id="MathJax-Span-223" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.361em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>u</mi><mo stretchy="false">(</mo><mi>ϕ</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-19">u(\phi)</script>:
+				
+				<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-20-Frame" tabindex="0" style="text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msup&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo&gt;&amp;#x2033;&lt;/mo&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;msup&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-224" style="width: 12.384em; display: inline-block;"><span style="display: inline-block; position: relative; width: 10.301em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.658em, 1010.18em, 3.158em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-225"><span class="msup" id="MathJax-Span-226"><span style="display: inline-block; position: relative; width: 1.015em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.54em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-227" style="font-family: MathJax_Math-italic;">u</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.402em; left: 0.598em;"><span class="mo" id="MathJax-Span-228" style="font-size: 70.7%; font-family: MathJax_Main;">′′</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-229" style="font-family: MathJax_Main; padding-left: 0.241em;">+</span><span class="mi" id="MathJax-Span-230" style="font-family: MathJax_Math-italic; padding-left: 0.241em;">u</span><span class="mo" id="MathJax-Span-231" style="font-family: MathJax_Main; padding-left: 0.301em;">=</span><span class="mo" id="MathJax-Span-232" style="font-family: MathJax_Main; padding-left: 0.301em;">−</span><span class="mfrac" id="MathJax-Span-233"><span style="display: inline-block; position: relative; width: 2.979em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.158em, 1000.42em, 4.17em, -999.997em); top: -4.64em; left: 50%; margin-left: -0.235em;"><span class="mn" id="MathJax-Span-234" style="font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.039em, 1002.86em, 4.17em, -999.997em); top: -3.211em; left: 50%; margin-left: -1.426em;"><span class="mrow" id="MathJax-Span-235"><span class="mi" id="MathJax-Span-236" style="font-family: MathJax_Math-italic;">m</span><span class="msubsup" id="MathJax-Span-237"><span style="display: inline-block; position: relative; width: 1.015em; height: 0px;"><span style="position: absolute; clip: rect(3.098em, 1000.54em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-238" style="font-family: MathJax_Math-italic;">h</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.283em; left: 0.598em;"><span class="mn" id="MathJax-Span-239" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-240"><span style="display: inline-block; position: relative; width: 1.015em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.54em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-241" style="font-family: MathJax_Math-italic;">u</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.283em; left: 0.598em;"><span class="mn" id="MathJax-Span-242" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1002.98em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 2.979em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span><span class="mi" id="MathJax-Span-243" style="font-family: MathJax_Math-italic;">F<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.122em;"></span></span><span class="mo" id="MathJax-Span-244" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-245" style="font-family: MathJax_Math-italic;">u</span><span class="mo" id="MathJax-Span-246" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.996em; border-left: 0px solid; width: 0px; height: 2.646em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>u</mi><mo>″</mo></msup><mo>+</mo><mi>u</mi><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><mrow><mi>m</mi><msup><mi>h</mi><mn>2</mn></msup><msup><mi>u</mi><mn>2</mn></msup></mrow></mfrac><mi>F</mi><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-20"> u'' + u = - \frac{1}{m h^2 u^2} F(u) </script>
+
+				Where the prime is <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-21-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mfrac&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;&amp;#x03D5;&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-247" style="width: 1.372em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.134em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.074em, 1001.13em, 2.86em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-248"><span class="mfrac" id="MathJax-Span-249"><span style="display: inline-block; position: relative; width: 0.896em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.336em, 1000.36em, 4.17em, -999.997em); top: -4.402em; left: 50%; margin-left: -0.176em;"><span class="mi" id="MathJax-Span-250" style="font-size: 70.7%; font-family: MathJax_Math-italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.336em, 1000.78em, 4.289em, -999.997em); top: -3.568em; left: 50%; margin-left: -0.414em;"><span class="mrow" id="MathJax-Span-251"><span class="mi" id="MathJax-Span-252" style="font-size: 70.7%; font-family: MathJax_Math-italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-253" style="font-size: 70.7%; font-family: MathJax_Math-italic;">ϕ</span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1000.9em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.896em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.711em; border-left: 0px solid; width: 0px; height: 1.932em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>ϕ</mi></mrow></mfrac></math></span></span><script type="math/tex" id="MathJax-Element-21">\frac{d}{d\phi}</script>, <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-22-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-254" style="width: 1.015em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.836em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.551em, 1000.84em, 2.324em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-255"><span class="mi" id="MathJax-Span-256" style="font-family: MathJax_Math-italic;">m</span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 0.718em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math></span></span><script type="math/tex" id="MathJax-Element-22">m</script> is the mass and <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-23-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-257" style="width: 0.717em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1000.6em, 2.324em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-258"><span class="mi" id="MathJax-Span-259" style="font-family: MathJax_Math-italic;">h</span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>h</mi></math></span></span><script type="math/tex" id="MathJax-Element-23">h </script> is the angular momentum per unit mass. This is an equation for the orbit, not an equation of motion. It does not tell you anything about <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-24-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-260" style="width: 2.086em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.729em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1001.61em, 2.622em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-261"><span class="mi" id="MathJax-Span-262" style="font-family: MathJax_Math-italic;">u</span><span class="mo" id="MathJax-Span-263" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-264" style="font-family: MathJax_Math-italic;">t</span><span class="mo" id="MathJax-Span-265" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.361em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>u</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-24">u(t)</script> or <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-25-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03D5;&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-266" style="width: 2.086em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.729em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1001.61em, 2.622em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-267"><span class="mi" id="MathJax-Span-268" style="font-family: MathJax_Math-italic;">ϕ</span><span class="mo" id="MathJax-Span-269" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-270" style="font-family: MathJax_Math-italic;">t</span><span class="mo" id="MathJax-Span-271" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.361em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ϕ</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-25">\phi(t)</script>, just the relationship between <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-26-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-272" style="width: 0.717em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.551em, 1000.6em, 2.324em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-273"><span class="mi" id="MathJax-Span-274" style="font-family: MathJax_Math-italic;">u</span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 0.718em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>u</mi></math></span></span><script type="math/tex" id="MathJax-Element-26">u</script> and <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-27-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03D5;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-275" style="width: 0.717em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1000.6em, 2.503em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-276"><span class="mi" id="MathJax-Span-277" style="font-family: MathJax_Math-italic;">ϕ</span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.282em; border-left: 0px solid; width: 0px; height: 1.218em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ϕ</mi></math></span></span><script type="math/tex" id="MathJax-Element-27">\phi</script>.</p>
+
+				<p>Let's pause a moment to ponder what this is actually telling us. It says that <em>if</em> we were to evolve an hypothetical mechanical system of a particle under a certain central force, its trajectory will be a solution to the Binet equation. Then the mechanical system becomes a computational tool to solve the latter.</p>
+				<p>What I propose here it's exactly this. We put <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-28-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-278" style="width: 3.336em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.741em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.372em, 1002.68em, 2.384em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-279"><span class="mi" id="MathJax-Span-280" style="font-family: MathJax_Math-italic;">m</span><span class="mo" id="MathJax-Span-281" style="font-family: MathJax_Main; padding-left: 0.301em;">=</span><span class="mn" id="MathJax-Span-282" style="font-family: MathJax_Main; padding-left: 0.301em;">1</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 0.932em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi><mo>=</mo><mn>1</mn></math></span></span><script type="math/tex" id="MathJax-Element-28">m=1</script> and take the (unphysical, whatever) simple system of a point particle in this specific force field:
+
+				<span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-29-Frame" tabindex="0" style="text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x2192;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;msup&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mfrac&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x005E;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;msup&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/msup&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-283" style="width: 8.753em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.265em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.598em, 1007.26em, 3.158em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-284"><span class="texatom" id="MathJax-Span-285"><span class="mrow" id="MathJax-Span-286"><span class="munderover" id="MathJax-Span-287"><span style="display: inline-block; position: relative; width: 0.777em; height: 0px;"><span style="position: absolute; clip: rect(3.158em, 1000.78em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-288" style="font-family: MathJax_Math-italic;">F<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.122em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.283em; left: 0.36em;"><span style="height: 0em; vertical-align: 0em; width: 0.479em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-289" style="font-family: MathJax_Main;">⃗&nbsp;<span style="height: 0em; vertical-align: 0em; margin-left: -0.235em;"></span></span><span style="display: inline-block; overflow: hidden; height: 1px; width: 0em;"></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span></span><span class="mo" id="MathJax-Span-290" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-291" style="font-family: MathJax_Math-italic;">r</span><span class="mo" id="MathJax-Span-292" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-293" style="font-family: MathJax_Main; padding-left: 0.301em;">=</span><span class="mo" id="MathJax-Span-294" style="font-family: MathJax_Main; padding-left: 0.301em;">−</span><span class="mfrac" id="MathJax-Span-295"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.158em, 1000.48em, 4.17em, -999.997em); top: -4.64em; left: 50%; margin-left: -0.235em;"><span class="mn" id="MathJax-Span-296" style="font-family: MathJax_Main;">3</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.158em, 1000.48em, 4.17em, -999.997em); top: -3.271em; left: 50%; margin-left: -0.235em;"><span class="mn" id="MathJax-Span-297" style="font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1000.6em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.598em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-298"><span style="display: inline-block; position: relative; width: 1.015em; height: 0px;"><span style="position: absolute; clip: rect(3.098em, 1000.54em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-299" style="font-family: MathJax_Math-italic;">h</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.402em; left: 0.598em;"><span class="mn" id="MathJax-Span-300" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mfrac" id="MathJax-Span-301"><span style="display: inline-block; position: relative; width: 1.015em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.039em, 1000.48em, 4.17em, -999.997em); top: -4.64em; left: 50%; margin-left: -0.295em;"><span class="texatom" id="MathJax-Span-302"><span class="mrow" id="MathJax-Span-303"><span class="munderover" id="MathJax-Span-304"><span style="display: inline-block; position: relative; width: 0.539em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.42em, 4.17em, -999.997em); top: -3.985em; left: 0.003em;"><span class="mi" id="MathJax-Span-305" style="font-family: MathJax_Math-italic;">r</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.098em, 1000.42em, 3.634em, -999.997em); top: -4.045em; left: 0.063em;"><span class="mo" id="MathJax-Span-306" style="font-family: MathJax_Main;">^</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.039em, 1000.9em, 4.17em, -999.997em); top: -3.211em; left: 50%; margin-left: -0.414em;"><span class="msubsup" id="MathJax-Span-307"><span style="display: inline-block; position: relative; width: 0.896em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.42em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-308" style="font-family: MathJax_Math-italic;">r</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.283em; left: 0.479em;"><span class="mn" id="MathJax-Span-309" style="font-size: 70.7%; font-family: MathJax_Main;">5</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1001.01em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.015em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.996em; border-left: 0px solid; width: 0px; height: 2.789em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow class="MJX-TeXAtom-ORD"><mover><mi>F</mi><mo stretchy="false">→</mo></mover></mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><msup><mi>h</mi><mn>2</mn></msup><mfrac><mrow class="MJX-TeXAtom-ORD"><mover><mi>r</mi><mo stretchy="false">^</mo></mover></mrow><msup><mi>r</mi><mn>5</mn></msup></mfrac></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-29"> \vec F(r) = - \frac{3}{2} h^2 \frac{\hat r}{r^5} </script>
+
+				where <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-30-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-310" style="width: 0.717em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1000.6em, 2.324em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-311"><span class="mi" id="MathJax-Span-312" style="font-family: MathJax_Math-italic;">h</span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>h</mi></math></span></span><script type="math/tex" id="MathJax-Element-30">h</script> is some constant, and integrate that numerically - it's very easy. Then the solution <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-31-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x2192;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-313" style="width: 2.503em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.086em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.253em, 1001.97em, 2.622em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-314"><span class="texatom" id="MathJax-Span-315"><span class="mrow" id="MathJax-Span-316"><span class="munderover" id="MathJax-Span-317"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.54em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-318" style="font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.045em; left: 0.122em;"><span style="height: 0em; vertical-align: 0em; width: 0.479em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-319" style="font-family: MathJax_Main;">⃗&nbsp;<span style="height: 0em; vertical-align: 0em; margin-left: -0.235em;"></span></span><span style="display: inline-block; overflow: hidden; height: 1px; width: 0em;"></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span></span><span class="mo" id="MathJax-Span-320" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-321" style="font-family: MathJax_Math-italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.122em;"></span></span><span class="mo" id="MathJax-Span-322" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.361em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mover><mi>x</mi><mo stretchy="false">→</mo></mover></mrow><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-31">\vec x (T) </script>, where <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-32-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-323" style="width: 0.896em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.717em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.313em, 1000.72em, 2.324em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-324"><span class="mi" id="MathJax-Span-325" style="font-family: MathJax_Math-italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.122em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 0.932em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></span></span><script type="math/tex" id="MathJax-Element-32">T</script> is the abstract time coordinate for this system, is actually a parametrization of the unique solution for the corresponding Binet equation, <strong>which is exactly the geodesic equation</strong>.</p>
+				<p>So we solve Newton's equation in cartesian coordinates, which is the easiest thing ever; <s>I use the leapfrog method instead of RK4 because it's simple, reversible and preserves the constants of motion.</s> (I now switched to Runge-Kutta to be able to increase step size and reduce render times, but with the future possibility of leaving the choice of integration method to the user). Then what I obtain is just the actual lightlike geodesic; with <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-33-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-326" style="width: 0.896em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.717em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.313em, 1000.72em, 2.324em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-327"><span class="mi" id="MathJax-Span-328" style="font-family: MathJax_Math-italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.122em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 0.932em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></span></span><script type="math/tex" id="MathJax-Element-33">T</script> a parameter running along it (distinct from both Schwarzschild <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-34-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-329" style="width: 0.479em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.36em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.313em, 1000.3em, 2.324em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-330"><span class="mi" id="MathJax-Span-331" style="font-family: MathJax_Math-italic;">t</span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 0.932em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>t</mi></math></span></span><script type="math/tex" id="MathJax-Element-34">t</script> and proper time, that doesn't exist).</p>
+				<!--<p>Numerically, for each ray, we take track of a position variable and a velocity (in the sense of \(\frac{d \vec x}{dT}\) variable. These are set to the observer position and normalized view vector. We also precompute \(h\). Then in each step ve do (pseudocode):</p>
+
+				<pre>
+					x = x + v*stepsize
+					a = - 1.5 * sqr(h) * x / (x^6)
+					v = v + a*stepsize</pre>
+
+				<p>as simple as that. This is all you need for raytracing photon orbits in Schwarzschild spacetime.</p>-->
+				<p>This is much better than the previous method, that worked with polar coordinates in the orbital plane. This is very efficient computationally.</p>
+			</div>
+			
+			<div class="row">
+				<h2>Raytracing in numpy</h2>
+				<p>If you take a look at the source tree you'll find is not much of a tree. It's just a python script. The horror! Why would anyone write a raytracer in python? Python loops are notoriously <strong>heavy</strong>, which is mostly (but not completely) a dealbreaker. The point here is that we're doing the computations in numpy, and calculating everything in parallel. This is why this program won't show you progressively the parts of the image it has already rendered: it's raytracing them all at the same time.</p>
+				<p>One basically starts by creating an array of initial conditions. For example, a <code>(numPixel,3)</code> array with view 3-vector corresponding to every pixel of the image (numPixel is image width * image height). Then every computation one would do for a single ray, one does in <code>(numPixel, ...)</code>-shaped arrays. Every quantity is actually an array. Since operations on numpy arrays are very fast and everything is statically typed (hope I'm not saying anything stupid right now) this should be fast enough. Maybe not C, but fast-ish.</p>
+				<p>At the same time, we have the versatility and clarity of python.</p>
+
+				<p>This method is basically horrible for standard raytracing, where objects have diffuse, reflective, refractive components and illumination conditions are important. Selectively reflecting parts of an array of rays, for example, is a nightmare; taking track of booleans or loop indices requires numerous masks and loops cannot be broken out of. However, this is not our case: the only objects in our scene are exclusively emissive: the sky, the incandescent accretion disk, the pitch black event horizon, and the bright dust. These are unaffected by incoming light on the object, and light itself passes through them undisturbed, at most reduced in intensity. This leads us to our colour determination algorithm:</p>
+
+			</div>
+
+			<div class="row">
+				<h2>Colour blending</h2>
+				<p>It's easy: we just need to blend together all objects between us and the origin of the ray with their respective alpha values, stacking them with the farthest at the bottom. We initialize a colour buffer with alpha to transparent black, then on intersection with an object, we update the buffer by blending the colour from the object <em>below</em> our colour buffer. Also every step we do this for the dust (we use a <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-35-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-332" style="width: 1.729em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.432em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.134em, 1001.43em, 2.324em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-333"><span class="msubsup" id="MathJax-Span-334"><span style="display: inline-block; position: relative; width: 1.432em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.42em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-335" style="font-family: MathJax_Math-italic;">r</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.342em; left: 0.479em;"><span class="texatom" id="MathJax-Span-336"><span class="mrow" id="MathJax-Span-337"><span class="mo" id="MathJax-Span-338" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mn" id="MathJax-Span-339" style="font-size: 70.7%; font-family: MathJax_Main;">2</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.146em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>r</mi><mrow class="MJX-TeXAtom-ORD"><mo>−</mo><mn>2</mn></mrow></msup></math></span></span><script type="math/tex" id="MathJax-Element-35">r^{-2}</script> density profile). We go on like this until iterations end. Note that the alpha channel then also functions as a z-buffer, as object stop contributing after the ray has intersected an opaque object (that thus set the buffer's alpha to 1.0).</p>
+				<p>This technique has the obvious drawback that you just cannot stop tracing a ray after you're done with it, as it's part of an array where other rays are still being traced. After colliding with the horizon, for example, rays continue wandering erratically from precision error after they hit the singularity - you can see what happens by explicitly disabling the horizon object. The alpha blending algorithm ensures they won't contribute anymore to the final image - but they will still weigh on the CPU.</p>
+			</div>
+
+
+			
+
+			<div class="clear"><br><br></div>
+		</div>
+
+
+
+
+	
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_AMS, monospace;"></div></div><iframe id="wanteeedPanel" allowtransparency="true" style="width: 335px !important; height: 250px !important; min-width: 0px; min-height: 0px; display: none; position: fixed; top: 10px; right: 10px; left: auto; border: none; background-color: rgb(255, 255, 255); overflow: hidden; z-index: 2147483647; clip: auto; border-radius: 3px; box-shadow: rgb(181, 181, 181) 1px 1px 3px 2px;" src="./Raytracing a Black Hole_files/saved_resource.html"></iframe></body></html>
